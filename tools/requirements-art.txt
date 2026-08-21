@@ -1,0 +1,4 @@
+# Dependencies required only for local portrait generation (never installed in CI).
+Pillow>=10,<13
+numpy>=1.26,<3
+# Optional, not required: pip install rembg  (background removal). See tools/clean_photo.py.

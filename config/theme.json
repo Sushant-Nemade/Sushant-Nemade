@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "palette": {
+    "background": "#0D1117",
+    "panel_background": "#111827",
+    "text_primary": "#E6EDF3",
+    "text_muted": "#8B949E",
+    "accent_primary": "#38BDF8",
+    "accent_secondary": "#60A5FA",
+    "accent_positive": "#2DD4BF",
+    "border": "#30363D"
+  },
+  "font_stack": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+  "animation": {
+    "total_duration_seconds": 4.0,
+    "row_stagger_seconds": 0.12,
+    "fade_seconds": 0.35
+  }
+}

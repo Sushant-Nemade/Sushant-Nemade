@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "Sushant Nemade",
+    "github_username": "Sushant-Nemade",
+    "role": "Data & AI Engineer",
+    "location": "Erlangen, Germany",
+    "education": "M.Sc. ICT @ FAU",
+    "headline": "Data & AI Engineer | Enterprise GenAI, RAG, Analytics and Automation",
+    "value_proposition": "I translate ambiguous business and operational problems into structured, responsible and usable AI, analytics and automation solutions."
+  },
+  "focus": ["Enterprise GenAI", "RAG", "Analytics", "Automation"],
+  "approach": ["Discover", "Evaluate", "Build", "Validate", "Adopt"],
+  "principles": ["Responsible AI", "GDPR", "Human Oversight"],
+  "languages_spoken": "English C1 \u00b7 German B1\u2192B2",
+  "status": "Open to full-time Data & AI opportunities",
+  "capability_groups": [
+    { "key": "languages", "label": "languages", "items": ["Python", "SQL"] },
+    { "key": "ai_ml", "label": "ai_ml", "items": ["PyTorch", "Scikit-learn", "Computer Vision"] },
+    { "key": "genai", "label": "genai", "items": ["Azure OpenAI", "RAG", "Copilot Studio"] },
+    { "key": "analytics", "label": "analytics", "items": ["Power BI", "Pandas", "Snowflake"] },
+    { "key": "automate", "label": "automate", "items": ["Power Apps", "Power Automate"] },
+    { "key": "delivery", "label": "delivery", "items": ["Git", "MLflow", "CI/CD"] }
+  ],
+  "contact": {
+    "linkedin": "https://www.linkedin.com/in/sushant-nemade1998/",
+    "github": "https://github.com/Sushant-Nemade",
+    "email": null
+  },
+  "experience": [
+    { "organisation": "Siemens Healthineers", "summary": "Data Analytics and Data Science" },
+    { "organisation": "Fraunhofer IIS", "summary": "Software Development, AI, ML and RAG" },
+    { "organisation": "Cognizant", "summary": "Enterprise Applications, Analytics and Automation" }
+  ],
+  "education_entries": [
+    { "institution": "FAU Erlangen-N\u00fcrnberg", "degree": "M.Sc. Information and Communication Technology" }
+  ],
+  "projects": [
+    {
+      "name": "Urban Change Detection and Change Captioning",
+      "description": "Designed and evaluated AI-assisted pipelines for bi-temporal satellite imagery, covering change detection, change captioning, benchmarking and retrieval-oriented interpretation.",
+      "technologies": ["Python", "PyTorch", "Computer Vision", "Model Benchmarking", "Retrieval Patterns"],
+      "repository_url": null,
+      "display_state": "case_study_in_preparation"
+    },
+    {
+      "name": "Enterprise GenAI and Agentic Automation Exploration",
+      "description": "Explored enterprise LLM, RAG, conversational-assistant and agentic workflow use cases through value, feasibility, reliability, governance and human-approval considerations.",
+      "technologies": ["Azure OpenAI", "Copilot Studio", "RAG", "Prompt Engineering", "Workflow Automation"],
+      "repository_url": null,
+      "display_state": "case_study_in_preparation"
+    },
+    {
+      "name": "Glottal Area Segmentation Using Deep Learning",
+      "description": "Implemented a U-Net-based segmentation workflow in PyTorch using the BAGLS benchmark and reproducible model-evaluation practices.",
+      "technologies": ["Python", "PyTorch", "U-Net", "Computer Vision", "Image Segmentation"],
+      "repository_url": null,
+      "display_state": "case_study_in_preparation"
+    },
+    {
+      "name": "Solar Panel Fault Classification",
+      "description": "Fine-tuned a ResNet50 model for solar-panel fault classification and framed the solution as an AI-assisted inspection and predictive-maintenance use case.",
+      "technologies": ["Python", "PyTorch", "ResNet50", "Computer Vision", "Transfer Learning"],
+      "repository_url": null,
+      "display_state": "case_study_in_preparation"
+    }
+  ]
+}

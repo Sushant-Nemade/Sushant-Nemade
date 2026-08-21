@@ -1,0 +1,4 @@
+# Full local development environment: daily deps + art deps + test tooling.
+-r tools/requirements-daily.txt
+-r tools/requirements-art.txt
+pytest>=8,<10

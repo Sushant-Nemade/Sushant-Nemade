@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.env.*
+
+# Editors / OS
+.vscode/*.log
+.DS_Store
+Thumbs.db
+*.swp
+
+# Local-only working directories: never commit raw photos or preview renders.
+private/*
+!private/.gitkeep
+build/*
+!build/.gitkeep
+
+# Backup created by README regeneration; never committed.
+README.previous.md
+
+# Final generated assets ARE committed intentionally - do not ignore assets/.
