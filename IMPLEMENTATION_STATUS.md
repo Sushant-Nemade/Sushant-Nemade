@@ -28,6 +28,21 @@ required manual follow-up. Updated as each phase completes.
 
 ## Blocked / pending items requiring your input
 
+- **Remote GitHub repository does not exist yet.** The local repository is
+  initialized, committed (branch `main`), and has `origin` pointed at
+  `https://github.com/Sushant-Nemade/Sushant-Nemade.git`, but `git ls-remote`
+  confirms that repository does not exist yet on GitHub. To finish publishing
+  as your profile README:
+  1. Create a **public** repository on GitHub named exactly `Sushant-Nemade`
+     (must match your username exactly for GitHub to render it as your
+     profile README) — do not initialize it with a README, license, or
+     .gitignore from the GitHub UI.
+  2. Run `git push -u origin main` from this workspace (a Git Credential
+     Manager / browser sign-in prompt will appear on first push).
+  3. In the new repository's settings, enable **Settings → Actions →
+     General → Workflow permissions → Read and write permissions** so
+     `refresh-contributions.yml` can commit updated contribution data.
+
 - **Portrait photo not present in the repository.** You mentioned a local
   file at `Downloads\Sushant-Nemade.png`, but no photo currently exists at
   `private/source-photo.jpg` in this workspace. The Phase 5 pipeline (photo
