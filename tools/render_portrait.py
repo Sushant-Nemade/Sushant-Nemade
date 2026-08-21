@@ -38,7 +38,11 @@ FONT_SIZE = 8
 LINE_HEIGHT = FONT_SIZE * 1.05
 CHAR_WIDTH = FONT_SIZE * 0.6
 PADDING = 16
-ROW_STAGGER_SECONDS = 0.04
+# Each visible glyph reveals individually, in reading order, like it is
+# being typed; the whole portrait finishes within DEFAULT_MAX_REVEAL_SECONDS
+# regardless of how many glyphs the grid contains.
+DEFAULT_MAX_REVEAL_SECONDS = 4.0
+MIN_CHAR_STAGGER_SECONDS = 0.006
 
 
 class PortraitRenderError(ValueError):
@@ -79,7 +83,12 @@ def build_ascii_grid_from_image(image: Image.Image, *, grid_width: int = DEFAULT
 
 
 def render_portrait_svg(grid: list[str], theme: ThemeConfig, *, static: bool) -> str:
-    """Render the ASCII grid as a single-accent-colour, row-revealed SVG."""
+    """Render the ASCII grid as a single-accent-colour portrait.
+
+    Each non-blank glyph is its own SVG element that reveals individually, in
+    reading order (left to right, top to bottom), so the portrait appears to
+    be "typed" in one glyph at a time before holding its final state.
+    """
     if not grid:
         raise PortraitRenderError("cannot render an empty ASCII grid")
 
@@ -88,28 +97,44 @@ def render_portrait_svg(grid: list[str], theme: ThemeConfig, *, static: bool) ->
     height = int(PADDING * 2 + len(grid) * LINE_HEIGHT)
     palette = theme.palette
 
+    glyph_count = sum(1 for row in grid for ch in row if ch != " ")
+    stagger_seconds = max(
+        MIN_CHAR_STAGGER_SECONDS,
+        min(0.02, DEFAULT_MAX_REVEAL_SECONDS / max(1, glyph_count)),
+    )
+
     body_parts: list[str] = [
         f'<rect x="0" y="0" width="{width}" height="{height}" rx="10" '
         f'fill="{palette["panel_background"]}" stroke="{palette["border"]}" stroke-width="1"/>'
     ]
+    glyph_index = 0
     for row_index, row in enumerate(grid):
         y = PADDING + (row_index + 1) * LINE_HEIGHT
-        reveal_class = "" if static else ' class="lt-reveal"'
-        reveal_style = (
-            "" if static else f' style="animation-delay:{row_index * ROW_STAGGER_SECONDS:.3f}s"'
-        )
-        body_parts.append(
-            f'<text x="{PADDING}" y="{y:.1f}" xml:space="preserve" font-family="monospace" '
-            f'font-size="{FONT_SIZE}" fill="{palette["accent_primary"]}"{reveal_class}{reveal_style}>'
-            f"{escape_text(row)}</text>"
-        )
+        for col_index, ch in enumerate(row):
+            if ch == " ":
+                continue
+            x = PADDING + col_index * CHAR_WIDTH
+            reveal_class = "lt-glyph" if static else "lt-glyph lt-reveal"
+            reveal_style = (
+                "" if static else f' style="animation-delay:{glyph_index * stagger_seconds:.3f}s"'
+            )
+            body_parts.append(
+                f'<text x="{x:.1f}" y="{y:.1f}" class="{reveal_class}"{reveal_style}>'
+                f"{escape_text(ch)}</text>"
+            )
+            glyph_index += 1
 
-    style = "" if static else reduced_motion_style()
+    glyph_style = (
+        f".lt-glyph{{font-family:monospace;font-size:{FONT_SIZE}px;"
+        f'fill:{palette["accent_primary"]};}}'
+    )
+    style = f"<style>{glyph_style}</style>" if static else reduced_motion_style(extra_css=glyph_style)
     title = "ASCII portrait"
     description = (
         "A monochrome ASCII-character portrait rendered from a locally processed "
-        "photograph; it reveals row by row once and then holds the final image. "
-        "The original photograph is not embedded in this file."
+        "photograph; each character reveals individually, in reading order, as if "
+        "being typed, and then the completed image holds. The original photograph "
+        "is not embedded in this file."
     )
     return wrap_svg(
         width=width, height=height, title=title, description=description, style=style,

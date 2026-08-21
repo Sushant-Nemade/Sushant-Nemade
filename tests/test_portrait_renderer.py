@@ -125,13 +125,14 @@ def test_animated_mode_supports_reduced_motion() -> None:
 
 
 def test_xml_escaping_for_ramp_characters() -> None:
-    # The glyph ramp includes '+' and other safe characters; escaping must
-    # still apply cleanly even though none of the ramp characters need it.
+    # Each glyph is now its own element, so escaped entities appear
+    # separately rather than as one contiguous run.
     grid = ["<>&\"'"]  # pathological row content, exercised directly
     theme = load_theme(REAL_THEME)
     svg = render_portrait_svg(grid, theme, static=True)
     validate_svg_bytes(svg.encode("utf-8"), source="portrait.svg")
-    assert "&lt;&gt;&amp;" in svg
+    for entity in ("&lt;", "&gt;", "&amp;"):
+        assert entity in svg
 
 
 def test_no_remote_resources() -> None:
@@ -140,3 +141,16 @@ def test_no_remote_resources() -> None:
     svg = render_portrait_svg(grid, theme, static=False)
     assert svg.count("http://") == 1  # only the SVG namespace declaration
     assert "https://" not in svg
+
+
+def test_glyphs_reveal_individually_in_increasing_order() -> None:
+    import re
+
+    grid = build_ascii_grid_from_image(_synthetic_gradient_image(), grid_width=30)
+    theme = load_theme(REAL_THEME)
+    svg = render_portrait_svg(grid, theme, static=False)
+    delays = [float(m) for m in re.findall(r'animation-delay:([\d.]+)s', svg)]
+    non_space_glyphs = sum(1 for row in grid for ch in row if ch != " ")
+    assert len(delays) == non_space_glyphs
+    assert delays == sorted(delays)
+    assert len(set(delays)) > 1

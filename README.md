@@ -1,6 +1,6 @@
 # Hi, I'm Sushant Nemade
 
-**Data & AI Engineer | Enterprise GenAI, RAG, Analytics and Automation**
+**Enterprise GenAI, RAG, Analytics and Automation**
 
 I translate ambiguous business and operational problems into structured, responsible and usable AI, analytics and automation solutions.
 
@@ -8,17 +8,22 @@ Based in Erlangen, Germany, with experience across healthcare technology, applie
 
 ## Living Terminal
 
-The panel and graph below are generated locally and refreshed automatically; if animations or images don't load, everything you need is also written out as plain text further down this page.
+Generated locally and refreshed automatically; if animations or images don't load, everything you need is also written out as plain text further down this page.
 
-<!--
-  ASCII portrait pending: no source photograph has been supplied to this
-  repository yet, so it is intentionally omitted here rather than faked.
-  See IMPLEMENTATION_STATUS.md for the exact commands to generate
-  assets/portrait.svg once a photo is added. Once generated, add it here:
-  ![ASCII-style portrait of Sushant Nemade](assets/portrait.svg)
--->
+<table>
+<tr>
+<td width="34%" valign="top">
+
+![ASCII-style portrait of Sushant Nemade, revealing one character at a time](assets/portrait.svg)
+
+</td>
+<td valign="top">
 
 ![Terminal-style system information panel listing role, location, education, focus areas, technical capability groups and status](assets/sysinfo.svg)
+
+</td>
+</tr>
+</table>
 
 ![Self-hosted visualization of public GitHub contribution activity, animated week by week](assets/contribution-graph.svg)
 
@@ -27,6 +32,7 @@ The panel and graph below are generated locally and refreshed automatically; if 
 ## Featured work
 
 Sanitized, conservative descriptions of real work. No unverified metrics, and no fabricated repository links - each project below is marked **Case study in preparation** until a public or sanitized repository is available.
+
 
 ### Urban Change Detection and Change Captioning
 Designed and evaluated AI-assisted pipelines for bi-temporal satellite imagery, covering change detection, change captioning, benchmarking and retrieval-oriented interpretation.

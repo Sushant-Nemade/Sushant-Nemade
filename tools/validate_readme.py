@@ -29,7 +29,7 @@ DEFAULT_README_PATH = REPO_ROOT / "README.md"
 _IMAGE_REF_PATTERN = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)\)")
 _LINK_PATTERN = re.compile(r"(?<!!)\[([^\]]*)\]\(([^)\s]+)\)")
 _UNRESOLVED_PLACEHOLDERS = ("<username>", "<your-", "TODO:", "FIXME", "lorem ipsum")
-_REQUIRED_SNIPPETS = ("Sushant Nemade", "Data & AI Engineer")
+_REQUIRED_SNIPPETS = ("Sushant Nemade", "Enterprise GenAI")
 _IGNORED_ASSET_PREFIXES = ("private/", "build/")
 
 

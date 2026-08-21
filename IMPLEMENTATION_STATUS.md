@@ -11,7 +11,7 @@ required manual follow-up. Updated as each phase completes.
 | 2 | Terminal system information panel | complete |
 | 3 | Public contribution data retrieval | complete |
 | 4 | Contribution graph SVG | complete |
-| 5 | ASCII portrait pipeline | complete (portrait generation itself pending a real photo; see below) |
+| 5 | ASCII portrait pipeline | complete (real portrait generated from a user-supplied photo) |
 | 6 | Recruiter-friendly README | complete |
 | 7 | Profile validation workflow | complete |
 | 8 | Daily contribution refresh workflow | complete |
@@ -28,42 +28,33 @@ required manual follow-up. Updated as each phase completes.
 
 ## Blocked / pending items requiring your input
 
-- **Remote GitHub repository does not exist yet.** The local repository is
-  initialized, committed (branch `main`), and has `origin` pointed at
-  `https://github.com/Sushant-Nemade/Sushant-Nemade.git`, but `git ls-remote`
-  confirms that repository does not exist yet on GitHub. To finish publishing
-  as your profile README:
-  1. Create a **public** repository on GitHub named exactly `Sushant-Nemade`
-     (must match your username exactly for GitHub to render it as your
-     profile README) — do not initialize it with a README, license, or
-     .gitignore from the GitHub UI.
-  2. Run `git push -u origin main` from this workspace (a Git Credential
-     Manager / browser sign-in prompt will appear on first push).
-  3. In the new repository's settings, enable **Settings → Actions →
-     General → Workflow permissions → Read and write permissions** so
-     `refresh-contributions.yml` can commit updated contribution data.
+- **Published.** The repository is live at
+  `https://github.com/Sushant-Nemade/Sushant-Nemade` (branch `main`). One
+  manual setting is still required there: enable **Settings → Actions →
+  General → Workflow permissions → Read and write permissions** so
+  `refresh-contributions.yml` can commit updated contribution data.
 
-- **Portrait photo not present in the repository.** You mentioned a local
-  file at `Downloads\Sushant-Nemade.png`, but no photo currently exists at
-  `private/source-photo.jpg` in this workspace. The Phase 5 pipeline (photo
-  cleanup + ASCII rendering) is implemented and tested against synthetic,
-  non-personal fixtures only, and `README.md` currently omits the portrait
-  (an HTML comment marks exactly where to add it). **To generate your real
-  portrait after this session:**
-  1. Copy your photo to `private/source-photo.jpg` (this path is git-ignored).
-  2. Run: `python -m tools.clean_photo --input private/source-photo.jpg`
+- **Portrait generated.** A real photo was supplied at
+  `private/source-photo.png` (git-ignored, never committed) and processed
+  through the Phase 5 pipeline (`tools.clean_photo` → `tools.render_portrait`)
+  into `assets/portrait.svg`, which is now embedded in `README.md` next to
+  the system-information panel. The portrait reveals one ASCII character at
+  a time, in reading order, then holds the completed image. If you supply a
+  different photo later, regenerate with:
+  1. Copy the new photo to `private/source-photo.png` (or any filename) and
+     pass it via `--input` if it isn't `private/source-photo.jpg`.
+  2. Run: `python -m tools.clean_photo --input private/source-photo.png`
   3. Run: `python -m tools.render_portrait`
   4. Re-run `python -m tools.validate_svg assets/portrait.svg`
-  5. Add the portrait `<img>`/Markdown image back into `README.md` at the
-     location marked with an HTML comment.
 
 - **Contribution data is currently seeded, not live.** `assets/contributions.json`
   and `assets/contribution-graph.svg` were generated from a local sample
   fixture (`source_description: "local dev seed (sample fixture, not a live
   fetch)"`) to prove the rendering pipeline end-to-end offline. Once Phase 8's
-  refresh workflow runs (or you run `python -m tools.pull_contributions`
-  locally with network access), these two files will be overwritten with real
-  public contribution data for `Sushant-Nemade`.
+  refresh workflow runs (after the workflow-permissions setting above is
+  enabled) or you run `python -m tools.pull_contributions` locally with
+  network access, these two files will be overwritten with real public
+  contribution data for `Sushant-Nemade`.
 
 ## Required manual security follow-up
 
