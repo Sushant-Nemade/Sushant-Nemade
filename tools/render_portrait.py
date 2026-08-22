@@ -42,7 +42,7 @@ PADDING = 16
 # being typed; the whole portrait finishes within DEFAULT_MAX_REVEAL_SECONDS
 # regardless of how many glyphs the grid contains.
 DEFAULT_MAX_REVEAL_SECONDS = 4.0
-MIN_CHAR_STAGGER_SECONDS = 0.006
+MAX_CHAR_STAGGER_SECONDS = 0.02
 
 
 class PortraitRenderError(ValueError):
@@ -98,9 +98,11 @@ def render_portrait_svg(grid: list[str], theme: ThemeConfig, *, static: bool) ->
     palette = theme.palette
 
     glyph_count = sum(1 for row in grid for ch in row if ch != " ")
-    stagger_seconds = max(
-        MIN_CHAR_STAGGER_SECONDS,
-        min(0.02, DEFAULT_MAX_REVEAL_SECONDS / max(1, glyph_count)),
+    # Capping (not flooring) the per-glyph stagger keeps the total reveal
+    # time within DEFAULT_MAX_REVEAL_SECONDS even for large, dense grids.
+    stagger_seconds = min(
+        MAX_CHAR_STAGGER_SECONDS,
+        DEFAULT_MAX_REVEAL_SECONDS / max(1, glyph_count),
     )
 
     body_parts: list[str] = [
