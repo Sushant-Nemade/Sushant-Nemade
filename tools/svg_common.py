@@ -55,15 +55,17 @@ def reduced_motion_style(*, extra_css: str = "") -> str:
     """CSS shared by all animated renderers.
 
     Animations run once (default ``animation-iteration-count: 1``), hold
-    their final state (``animation-fill-mode: forwards``), and are fully
-    disabled - with content shown at full opacity - when the user has
-    requested reduced motion.
+    their final state, and are fully disabled - with content shown at full
+    opacity - when the user has requested reduced motion. Content is visible
+    by default so clients that ignore animation rules still show every item;
+    ``animation-fill-mode: both`` applies the transparent first keyframe only
+    when the reveal animation itself is supported.
     """
     return (
         "<style>"
-        ".lt-reveal{opacity:0;animation-name:lt-fade-in;"
+        ".lt-reveal{opacity:1;animation-name:lt-fade-in;"
         "animation-duration:0.35s;animation-timing-function:ease-out;"
-        "animation-fill-mode:forwards;animation-iteration-count:1;}"
+        "animation-fill-mode:both;animation-iteration-count:1;}"
         "@keyframes lt-fade-in{from{opacity:0;}to{opacity:1;}}"
         "@media (prefers-reduced-motion: reduce){"
         ".lt-reveal{animation:none;opacity:1;}}"

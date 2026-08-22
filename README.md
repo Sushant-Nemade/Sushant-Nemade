@@ -6,24 +6,21 @@ I translate ambiguous business and operational problems into structured, respons
 
 Based in Erlangen, Germany, with experience across healthcare technology, applied research, enterprise applications and industrial environments.
 
+<p align="center">
+	<a href="#featured-work">Featured work</a> &nbsp;&middot;&nbsp;
+	<a href="#core-capabilities">Core capabilities</a> &nbsp;&middot;&nbsp;
+	<a href="#current-focus">Current focus</a> &nbsp;&middot;&nbsp;
+	<a href="#contact">Contact</a>
+</p>
+
 ## Living Terminal
 
 Generated locally and refreshed automatically; if animations or images don't load, everything you need is also written out as plain text further down this page.
 
-<table>
-<tr>
-<td width="34%" valign="top">
-
-![ASCII-style portrait of Sushant Nemade, revealing one character at a time](assets/portrait.svg)
-
-</td>
-<td valign="top">
-
-![Terminal-style system information panel listing role, location, education, focus areas, technical capability groups and status](assets/sysinfo.svg)
-
-</td>
-</tr>
-</table>
+<p align="center">
+	<img src="assets/portrait.svg" width="34%" alt="ASCII-style portrait of Sushant Nemade, revealing one character at a time">
+	<img src="assets/sysinfo.svg" width="64%" alt="Terminal-style system information panel listing role, location, education, focus areas, technical capability groups and status">
+</p>
 
 ![Self-hosted visualization of public GitHub contribution activity, animated week by week](assets/contribution-graph.svg)
 
@@ -33,30 +30,45 @@ Generated locally and refreshed automatically; if animations or images don't loa
 
 Sanitized, conservative descriptions of real work. No unverified metrics, and no fabricated repository links - each project below is marked **Case study in preparation** until a public or sanitized repository is available.
 
+<details open>
+<summary><strong>Urban Change Detection and Change Captioning</strong></summary>
 
-### Urban Change Detection and Change Captioning
 Designed and evaluated AI-assisted pipelines for bi-temporal satellite imagery, covering change detection, change captioning, benchmarking and retrieval-oriented interpretation.
 
 **Technologies:** Python, PyTorch, Computer Vision, Model Benchmarking, Retrieval Patterns
 **Status:** Case study in preparation
 
-### Enterprise GenAI and Agentic Automation Exploration
+</details>
+
+<details>
+<summary><strong>Enterprise GenAI and Agentic Automation Exploration</strong></summary>
+
 Explored enterprise LLM, RAG, conversational-assistant and agentic workflow use cases through value, feasibility, reliability, governance and human-approval considerations. Described here only at a sanitized, capability level - no internal systems, datasets, or business details are disclosed.
 
 **Technologies:** Azure OpenAI, Copilot Studio, RAG, Prompt Engineering, Workflow Automation
 **Status:** Case study in preparation
 
-### Glottal Area Segmentation Using Deep Learning
+</details>
+
+<details>
+<summary><strong>Glottal Area Segmentation Using Deep Learning</strong></summary>
+
 Implemented a U-Net-based segmentation workflow in PyTorch using the BAGLS benchmark and reproducible model-evaluation practices.
 
 **Technologies:** Python, PyTorch, U-Net, Computer Vision, Image Segmentation
 **Status:** Case study in preparation
 
-### Solar Panel Fault Classification
+</details>
+
+<details>
+<summary><strong>Solar Panel Fault Classification</strong></summary>
+
 Fine-tuned a ResNet50 model for solar-panel fault classification and framed the solution as an AI-assisted inspection and predictive-maintenance use case.
 
 **Technologies:** Python, PyTorch, ResNet50, Computer Vision, Transfer Learning
 **Status:** Case study in preparation
+
+</details>
 
 ## Core capabilities
 

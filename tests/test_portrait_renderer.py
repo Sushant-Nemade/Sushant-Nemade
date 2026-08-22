@@ -122,6 +122,8 @@ def test_animated_mode_supports_reduced_motion() -> None:
     svg = render_portrait_svg(grid, theme, static=False)
     assert "prefers-reduced-motion" in svg
     assert "lt-reveal" in svg
+    assert ".lt-reveal{opacity:1" in svg
+    assert "animation-fill-mode:both" in svg
 
 
 def test_xml_escaping_for_ramp_characters() -> None:
