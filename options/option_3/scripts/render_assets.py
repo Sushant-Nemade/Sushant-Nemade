@@ -7,7 +7,6 @@ import json
 import os
 import tempfile
 import textwrap
-import math
 from pathlib import Path
 from xml.sax.saxutils import escape
 
@@ -90,110 +89,69 @@ def _shared_style() -> str:
         ".module{transform-box:fill-box;transform-origin:center;animation:breathe 4s ease-in-out infinite}"
         ".m2{animation-delay:.5s}.m3{animation-delay:1s}.m4{animation-delay:1.5s}.m5{animation-delay:2s}"
         ".scan{animation:scan 7s linear infinite}"
+        ".signal-core{transform-box:fill-box;transform-origin:center;animation:core-pulse 3.6s ease-in-out infinite}"
+        ".signal-line{animation:signal-flow 4s linear infinite}"
+        ".signal-node{transform-box:fill-box;transform-origin:center;animation:node-pulse 2.4s ease-in-out infinite}"
+        ".n2{animation-delay:.6s}.n3{animation-delay:1.2s}.n4{animation-delay:1.8s}"
         "@keyframes boot{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}"
         "@keyframes blink{50%{opacity:.15}}"
         "@keyframes breathe{0%,100%{opacity:.82}50%{opacity:1}}"
         "@keyframes scan{from{transform:translateY(0)}to{transform:translateY(430px)}}"
+        "@keyframes core-pulse{0%,100%{opacity:.84}50%{opacity:1}}"
+        "@keyframes signal-flow{to{stroke-dashoffset:-48}}"
+        "@keyframes node-pulse{0%,100%{opacity:.45;transform:scale(.82)}50%{opacity:1;transform:scale(1.15)}}"
         "@media(prefers-reduced-motion:reduce){"
-        ".boot,.cursor,.module,.scan{animation:none}.moving{display:none}}"
+        ".boot,.cursor,.module,.scan,.signal-core,.signal-line,.signal-node{animation:none}.moving{display:none}}"
         "</style>"
     )
 
 
-def _distance_to_segment(
-    point_x: float,
-    point_y: float,
-    start_x: float,
-    start_y: float,
-    end_x: float,
-    end_y: float,
-) -> float:
-    delta_x = end_x - start_x
-    delta_y = end_y - start_y
-    length_squared = delta_x * delta_x + delta_y * delta_y
-    if length_squared == 0:
-        return math.hypot(point_x - start_x, point_y - start_y)
-    position = max(
-        0.0,
-        min(
-            1.0,
-            ((point_x - start_x) * delta_x + (point_y - start_y) * delta_y)
-            / length_squared,
-        ),
-    )
-    closest_x = start_x + position * delta_x
-    closest_y = start_y + position * delta_y
-    return math.hypot(point_x - closest_x, point_y - closest_y)
-
-
-def _in_triangle(
-    point_x: float,
-    point_y: float,
-    first: tuple[float, float],
-    second: tuple[float, float],
-    third: tuple[float, float],
-) -> bool:
-    def sign(
-        x1: float, y1: float, x2: float, y2: float, x3: float, y3: float
-    ) -> float:
-        return (x1 - x3) * (y2 - y3) - (x2 - x3) * (y1 - y3)
-
-    first_sign = sign(point_x, point_y, *first, *second)
-    second_sign = sign(point_x, point_y, *second, *third)
-    third_sign = sign(point_x, point_y, *third, *first)
-    has_negative = first_sign < 0 or second_sign < 0 or third_sign < 0
-    has_positive = first_sign > 0 or second_sign > 0 or third_sign > 0
-    return not (has_negative and has_positive)
-
-
-def _github_mark_contains(x: float, y: float) -> bool:
-    head = ((x - 0.52) / 0.245) ** 2 + ((y - 0.42) / 0.225) ** 2 <= 1
-    left_ear = _in_triangle(x, y, (0.30, 0.34), (0.31, 0.13), (0.44, 0.25))
-    right_ear = _in_triangle(x, y, (0.60, 0.25), (0.73, 0.13), (0.74, 0.35))
-    body = ((x - 0.52) / 0.185) ** 2 + ((y - 0.70) / 0.28) ** 2 <= 1
-    left_leg = 0.36 <= x <= 0.46 and 0.72 <= y <= 0.96
-    right_leg = 0.58 <= x <= 0.68 and 0.72 <= y <= 0.96
-    left_arm = _distance_to_segment(x, y, 0.39, 0.66, 0.27, 0.76) <= 0.055
-    tail_segments = (
-        (0.36, 0.68, 0.27, 0.69),
-        (0.27, 0.69, 0.19, 0.62),
-        (0.19, 0.62, 0.12, 0.52),
-        (0.12, 0.52, 0.14, 0.43),
-    )
-    tail = any(
-        _distance_to_segment(x, y, start_x, start_y, end_x, end_y) <= 0.045
-        for start_x, start_y, end_x, end_y in tail_segments
-    )
-    return head or left_ear or right_ear or body or left_leg or right_leg or left_arm or tail
-
-
-def _pixel_github_mark(
+def _sn_signal_core(
     *,
-    grid_size: int,
     origin_x: float,
     origin_y: float,
     max_width: float,
     max_height: float,
-    color: str,
+    palette: dict[str, str],
+    motion_seconds: float,
 ) -> str:
-    cell = min(max_width / grid_size, max_height / grid_size)
-    actual_width = grid_size * cell
-    actual_height = grid_size * cell
-    start_x = origin_x + (max_width - actual_width) / 2
-    start_y = origin_y + (max_height - actual_height) / 2
-    dots: list[str] = []
-    for row in range(grid_size):
-        for column in range(grid_size):
-            normalized_x = (column + 0.5) / grid_size
-            normalized_y = (row + 0.5) / grid_size
-            if not _github_mark_contains(normalized_x, normalized_y):
-                continue
-            dots.append(
-                f'<circle cx="{start_x + (column + 0.5) * cell:.1f}" '
-                f'cy="{start_y + (row + 0.5) * cell:.1f}" r="{cell * 0.34:.2f}" '
-                f'fill="{color}"/>'
-            )
-    return f'<g id="pixel-github-mark">{"".join(dots)}</g>'
+    scale = min(max_width / 240, max_height / 240)
+    translate_x = origin_x + (max_width - 240 * scale) / 2
+    translate_y = origin_y + (max_height - 240 * scale) / 2
+    orbit_path = "M24 120 C24 56 216 56 216 120 C216 184 24 184 24 120 Z"
+    diagonal_path = "M43 174 C82 210 184 198 211 126 C229 78 174 38 116 43 C62 47 31 85 43 174 Z"
+    body = [f'<g id="sn-signal-core" transform="translate({translate_x:.1f} {translate_y:.1f}) scale({scale:.4f})">']
+    body.append(f'<circle cx="120" cy="120" r="102" fill="none" stroke="{palette["border"]}" stroke-dasharray="2 9"/>')
+    body.append(f'<path d="{orbit_path}" fill="none" stroke="{palette["cyan"]}" stroke-opacity=".42" stroke-width="2"/>')
+    body.append(f'<path d="{diagonal_path}" fill="none" stroke="{palette["green"]}" stroke-opacity=".34" stroke-width="2"/>')
+    body.append(f'<path d="M49 81 C91 18 194 39 205 110 C215 177 129 218 69 178" fill="none" stroke="{palette["amber"]}" stroke-opacity=".24" stroke-width="2" stroke-dasharray="7 9" class="signal-line"/>')
+    body.append('<g class="signal-core">')
+    body.append(f'<polygon points="120,48 183,84 183,156 120,192 57,156 57,84" fill="{palette["panel_raised"]}" stroke="{palette["cyan"]}" stroke-width="2"/>')
+    body.append(f'<polygon points="120,48 183,84 120,120 57,84" fill="{palette["cyan"]}" fill-opacity=".17" stroke="{palette["border"]}"/>')
+    body.append(f'<polygon points="57,84 120,120 120,192 57,156" fill="{palette["green"]}" fill-opacity=".10" stroke="{palette["border"]}"/>')
+    body.append(f'<polygon points="183,84 120,120 120,192 183,156" fill="{palette["amber"]}" fill-opacity=".08" stroke="{palette["border"]}"/>')
+    body.append(f'<path d="M105 91 H79 V118 H105 V146 H78" fill="none" stroke="{palette["cyan"]}" stroke-width="8" stroke-linecap="square" stroke-linejoin="round"/>')
+    body.append(f'<path d="M132 146 V91 L163 146 V91" fill="none" stroke="{palette["green"]}" stroke-width="8" stroke-linecap="square" stroke-linejoin="round"/>')
+    body.append('</g>')
+    for x, y, color, css_class in (
+        (120, 18, palette["cyan"], "signal-node"),
+        (218, 120, palette["green"], "signal-node n2"),
+        (120, 222, palette["amber"], "signal-node n3"),
+        (22, 120, palette["red"], "signal-node n4"),
+    ):
+        body.append(f'<circle cx="{x}" cy="{y}" r="5" fill="{color}" class="{css_class}"/>')
+    for begin, path, color in (
+        ("0s", orbit_path, palette["cyan"]),
+        (f"{motion_seconds / 3:.1f}s", orbit_path, palette["green"]),
+        (f"{motion_seconds * 2 / 3:.1f}s", diagonal_path, palette["amber"]),
+    ):
+        body.append(
+            f'<circle r="4" fill="{color}" class="moving"><animateMotion dur="{motion_seconds:.1f}s" '
+            f'begin="{begin}" repeatCount="indefinite" path="{path}"/></circle>'
+        )
+    body.append(_text(120, 233, "STRUCTURE / SIGNAL / SYSTEM", size=8, fill=palette["muted"], weight=700, family=MONO, anchor="middle"))
+    body.append("</g>")
+    return "".join(body)
 
 
 def render_terminal_hero(
@@ -204,13 +162,13 @@ def render_terminal_hero(
     body.append(_text(76, 28, "systems-console / identity", size=11, fill=palette["muted"], family=MONO))
     body.append(f'<rect x="24" y="68" width="286" height="292" rx="5" fill="{palette["panel"]}" stroke="{palette["border"]}"/>')
     body.append(
-        _pixel_github_mark(
-            grid_size=int(config["logo_grid_size"]),
+        _sn_signal_core(
             origin_x=34,
             origin_y=77,
             max_width=266,
             max_height=268,
-            color=palette["cyan"],
+            palette=palette,
+            motion_seconds=float(config["logo_motion_seconds"]),
         )
     )
     body.append(_text(334, 93, "$ boot profile --mode professional", size=13, fill=palette["green"], family=MONO, css_class="boot"))
@@ -235,7 +193,7 @@ def render_terminal_hero(
         width,
         height,
         f"Systems Console identity for {profile.identity.name}",
-        f"Dark terminal identity panel with a pixel GitHub mark for {profile.identity.name}, {profile.identity.headline}.",
+        f"Dark terminal identity panel with the animated SN Signal Core for {profile.identity.name}, {profile.identity.headline}.",
         "".join(body),
     )
 
@@ -248,13 +206,13 @@ def render_terminal_hero_mobile(
     body.append(_text(76, 28, "systems-console / identity", size=10, fill=palette["muted"], family=MONO))
     body.append(f'<rect x="44" y="66" width="302" height="286" rx="5" fill="{palette["panel"]}" stroke="{palette["border"]}"/>')
     body.append(
-        _pixel_github_mark(
-            grid_size=int(config["logo_grid_size"]),
+        _sn_signal_core(
             origin_x=54,
             origin_y=76,
             max_width=282,
             max_height=266,
-            color=palette["cyan"],
+            palette=palette,
+            motion_seconds=float(config["logo_motion_seconds"]),
         )
     )
     body.append(_text(22, 388, "$ boot profile --mode professional", size=11, fill=palette["green"], family=MONO, css_class="boot"))
@@ -276,7 +234,7 @@ def render_terminal_hero_mobile(
         body.append(_text(112, y, value, size=10, fill=palette["text"], family=MONO, css_class=css_class))
         y += 31
     body.append(f'<rect x="22" y="690" width="9" height="16" fill="{palette["green"]}" class="cursor"/>')
-    return _svg(width, height, f"Mobile Systems Console identity for {profile.identity.name}", "Mobile dark terminal identity panel with a pixel GitHub mark and professional profile facts.", "".join(body))
+    return _svg(width, height, f"Mobile Systems Console identity for {profile.identity.name}", "Mobile dark terminal identity panel with the animated SN Signal Core and professional profile facts.", "".join(body))
 
 
 def _iso_cube(

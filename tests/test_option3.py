@@ -47,9 +47,11 @@ def test_all_assets_fit_mobile_budget() -> None:
     assert all(path.stat().st_size < 500_000 for path in assets.glob("*.svg"))
 
 
-def test_terminal_heroes_use_generated_pixel_github_mark() -> None:
+def test_terminal_heroes_use_animated_sn_signal_core() -> None:
     assets = REPO_ROOT / "options" / "option_3" / "assets"
     for name in ("terminal-hero.svg", "terminal-hero-mobile.svg"):
         text = (assets / name).read_text(encoding="utf-8")
-        assert 'id="pixel-github-mark"' in text
-        assert "dot-matrix portrait" not in text.lower()
+        assert 'id="sn-signal-core"' in text
+        assert text.count("<animateMotion") >= 3
+        assert "prefers-reduced-motion" in text
+        assert "github mark" not in text.lower()
