@@ -41,10 +41,15 @@ jobs:
         run: python -m tools.pull_contributions
 
       - name: Render contribution graph
-        run: python -m tools.render_graph
+        run: |
+          python -m tools.render_graph
+          python -m options.option_2.scripts.fetch_public_repos
+          python -m options.option_2.scripts.render_assets --skip-portrait
 
-      - name: Validate rendered graph SVG
-        run: python -m tools.validate_svg assets/contribution-graph.svg
+      - name: Validate rendered profile assets
+        run: |
+          python -m tools.validate_svg assets/contribution-graph.svg
+          python -m options.option_2.scripts.validate_profile --readme README.md
 
       - name: Commit and push changes, if any
         env:
@@ -54,6 +59,7 @@ jobs:
           GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
         run: |
           git add assets/contributions.json assets/contribution-graph.svg
+          git add options/option_2/public-repos.json options/option_2/assets
           if git diff --cached --quiet; then
             echo "No contribution data changes to commit."
             exit 0

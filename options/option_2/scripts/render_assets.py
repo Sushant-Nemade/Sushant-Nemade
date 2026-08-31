@@ -10,11 +10,13 @@ import tempfile
 import textwrap
 from datetime import date, timedelta
 from pathlib import Path
+from typing import TYPE_CHECKING
 from xml.sax.saxutils import escape
 
-from PIL import Image
-
 from tools.config import DEFAULT_PROFILE_PATH, CapabilityGroup, ProfileConfig, load_profile
+
+if TYPE_CHECKING:
+    from PIL import Image
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 OPTION_ROOT = REPO_ROOT / "options" / "option_2"
@@ -128,7 +130,7 @@ def _render_banner(profile: ProfileConfig, config: dict, palette: dict[str, str]
     return _svg(width, height, f"Professional introduction for {profile.identity.name}", profile.identity.value_proposition, "".join(body))
 
 
-def _render_portrait(image: Image.Image, columns: int, palette: dict[str, str]) -> str:
+def _render_portrait(image: "Image.Image", columns: int, palette: dict[str, str]) -> str:
     grayscale = image.convert("L")
     rows = max(1, round(columns * grayscale.height / grayscale.width * 0.72))
     sampled = grayscale.resize((columns, rows))
@@ -354,6 +356,8 @@ def render_all(
         "stats": lambda palette: _render_stats(contributions, repositories, palette),
     }
     if portrait_path is not None:
+        from PIL import Image
+
         if not portrait_path.is_file():
             raise ValueError(f"portrait input not found: {portrait_path}")
         image = Image.open(portrait_path)

@@ -9,7 +9,8 @@
 - [x] Local asset and README validation added
 - [x] Portrait source remains git-ignored
 - [x] Option 2 workflow names are isolated
+- [x] Daily public-data refresh integrated into the proven contribution workflow
 - [ ] Manual GitHub workflow run succeeds
-- [ ] Optional schedules enabled after manual workflow review
+- [x] Active profile schedule updates contribution, repository, statistics, and chart assets
 - [ ] Optional self-ratings supplied by the profile owner
 - [ ] Public case-study repositories linked when available

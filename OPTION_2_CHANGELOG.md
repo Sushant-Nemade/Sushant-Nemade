@@ -8,3 +8,4 @@
 - Added dark/light rendering for all theme-sensitive assets.
 - Used verified profile configuration, contribution data, and public repository metadata only.
 - Added activation and rollback documentation.
+- Extended the existing daily contribution workflow to refresh Option 2 public-data assets while preserving the private-source portrait.
