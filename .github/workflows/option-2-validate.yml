@@ -1,0 +1,39 @@
+name: Option 2 - Validate Candidate
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "README.option-2.md"
+      - "README.option-1.md"
+      - "options/option_2/**"
+      - "tests/test_option2.py"
+      - ".github/workflows/option-2-*.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: option-2-validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Validate Option 2 candidate
+        run: |
+          python -m options.option_2.scripts.validate_profile
+          python -m pytest -q tests/test_option2.py

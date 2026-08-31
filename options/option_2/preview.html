@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Option 2 asset preview</title>
+  <style>
+    :root { font-family: Georgia, serif; color: #18181b; background: #dfe3e8; }
+    body { margin: 0; }
+    header { max-width: 1120px; margin: 0 auto; padding: 28px 24px 12px; }
+    h1 { margin: 0; font-size: 28px; letter-spacing: 0; }
+    p { color: #52525b; }
+    main { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding: 20px; max-width: 1280px; margin: 0 auto; }
+    section { padding: 18px; border: 1px solid #c5cbd2; border-radius: 6px; }
+    section.dark { background: #0d1117; color: #f4f4f5; }
+    section.light { background: #f7f8fa; }
+    h2 { margin: 0 0 14px; font-size: 18px; letter-spacing: 0; }
+    img { display: block; width: 100%; height: auto; margin: 0 0 12px; }
+    .portrait { max-width: 280px; margin-inline: auto; }
+    .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    @media (max-width: 760px) { main, .pair { grid-template-columns: 1fr; } main { padding: 10px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Applied AI Dossier / Option 2</h1>
+    <p>Local preview of committed SVGs on both GitHub-like themes.</p>
+  </header>
+  <main>
+    <section class="dark">
+      <h2>Dark</h2>
+      <img class="portrait" src="assets/portrait-dark.svg" alt="Dark portrait preview">
+      <img src="assets/banner-dark.svg" alt="Dark banner preview">
+      <img src="assets/toolbox-dark.svg" alt="Dark toolbox preview">
+      <div class="pair">
+        <img src="assets/capability-radar-dark.svg" alt="Dark capability radar preview">
+        <img src="assets/language-signal-dark.svg" alt="Dark language signal preview">
+      </div>
+      <img src="assets/activity-dark.svg" alt="Dark activity preview">
+      <img src="assets/stats-dark.svg" alt="Dark statistics preview">
+      <div class="pair">
+        <img src="assets/project-01-dark.svg" alt="Dark project one preview">
+        <img src="assets/project-02-dark.svg" alt="Dark project two preview">
+        <img src="assets/project-03-dark.svg" alt="Dark project three preview">
+        <img src="assets/project-04-dark.svg" alt="Dark project four preview">
+      </div>
+    </section>
+    <section class="light">
+      <h2>Light</h2>
+      <img class="portrait" src="assets/portrait-light.svg" alt="Light portrait preview">
+      <img src="assets/banner-light.svg" alt="Light banner preview">
+      <img src="assets/toolbox-light.svg" alt="Light toolbox preview">
+      <div class="pair">
+        <img src="assets/capability-radar-light.svg" alt="Light capability radar preview">
+        <img src="assets/language-signal-light.svg" alt="Light language signal preview">
+      </div>
+      <img src="assets/activity-light.svg" alt="Light activity preview">
+      <img src="assets/stats-light.svg" alt="Light statistics preview">
+      <div class="pair">
+        <img src="assets/project-01-light.svg" alt="Light project one preview">
+        <img src="assets/project-02-light.svg" alt="Light project two preview">
+        <img src="assets/project-03-light.svg" alt="Light project three preview">
+        <img src="assets/project-04-light.svg" alt="Light project four preview">
+      </div>
+    </section>
+  </main>
+</body>
+</html>

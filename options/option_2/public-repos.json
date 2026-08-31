@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "username": "Sushant-Nemade",
+  "retrieved_at": "2026-08-31T19:35:01+00:00",
+  "source": "https://api.github.com/users/Sushant-Nemade/repos",
+  "repositories": [
+    {
+      "name": "Sushant-Nemade",
+      "url": "https://github.com/Sushant-Nemade/Sushant-Nemade",
+      "description": null,
+      "primary_language": "Python",
+      "languages": {
+        "Python": 97682
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "dsss_homework_2",
+      "url": "https://github.com/Sushant-Nemade/dsss_homework_2",
+      "description": null,
+      "primary_language": "Python",
+      "languages": {
+        "Python": 2950
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    }
+  ],
+  "language_bytes": {
+    "Python": 100632
+  }
+}

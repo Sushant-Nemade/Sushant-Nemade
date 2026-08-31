@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "concept": "Applied AI Dossier",
+  "accent": "#E11D48",
+  "portrait_columns": 64,
+  "max_asset_bytes": 500000,
+  "public_repo_language_exclusions": [
+    "Shell",
+    "Makefile",
+    "Dockerfile",
+    "Batchfile",
+    "Procfile"
+  ],
+  "banner_lines": [
+    "Sushant Nemade",
+    "Enterprise GenAI | RAG | Analytics | Automation",
+    "From ambiguous problems to responsible systems"
+  ]
+}
