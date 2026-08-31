@@ -2,7 +2,7 @@
   "schema_version": 1,
   "concept": "Systems Console",
   "max_asset_bytes": 500000,
-  "portrait_columns": 54,
+  "logo_grid_size": 48,
   "palette": {
     "background": "#080B10",
     "panel": "#0E131B",

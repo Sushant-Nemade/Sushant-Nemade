@@ -2,7 +2,7 @@
 
 <picture>
   <source media="(max-width: 600px)" srcset="options/option_3/assets/terminal-hero-mobile.svg">
-  <img src="options/option_3/assets/terminal-hero.svg" width="900" alt="Dark live terminal profile for Sushant Nemade with a dot-matrix portrait and professional system information">
+  <img src="options/option_3/assets/terminal-hero.svg" width="900" alt="Dark live terminal profile for Sushant Nemade with a pixel GitHub mark and professional system information">
 </picture>
 
 [Mission](#01--mission) &nbsp;&middot;&nbsp; [Architecture](#02--delivery-architecture) &nbsp;&middot;&nbsp; [Selected systems](#03--selected-systems) &nbsp;&middot;&nbsp; [Contact](#05--contact)

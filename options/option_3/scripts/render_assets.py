@@ -7,17 +7,15 @@ import json
 import os
 import tempfile
 import textwrap
+import math
 from pathlib import Path
 from xml.sax.saxutils import escape
-
-from PIL import Image
 
 from tools.config import DEFAULT_PROFILE_PATH, ProfileConfig, load_profile
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 OPTION_ROOT = REPO_ROOT / "options" / "option_3"
 DEFAULT_CONFIG = OPTION_ROOT / "config.json"
-DEFAULT_PORTRAIT = REPO_ROOT / "build" / "photo-ready.png"
 DEFAULT_OUTPUT = OPTION_ROOT / "assets"
 FONT = "Segoe UI,Helvetica,Arial,sans-serif"
 MONO = "Consolas,Liberation Mono,monospace"
@@ -102,50 +100,112 @@ def _shared_style() -> str:
     )
 
 
-def _portrait_dots(
-    image: Image.Image,
+def _distance_to_segment(
+    point_x: float,
+    point_y: float,
+    start_x: float,
+    start_y: float,
+    end_x: float,
+    end_y: float,
+) -> float:
+    delta_x = end_x - start_x
+    delta_y = end_y - start_y
+    length_squared = delta_x * delta_x + delta_y * delta_y
+    if length_squared == 0:
+        return math.hypot(point_x - start_x, point_y - start_y)
+    position = max(
+        0.0,
+        min(
+            1.0,
+            ((point_x - start_x) * delta_x + (point_y - start_y) * delta_y)
+            / length_squared,
+        ),
+    )
+    closest_x = start_x + position * delta_x
+    closest_y = start_y + position * delta_y
+    return math.hypot(point_x - closest_x, point_y - closest_y)
+
+
+def _in_triangle(
+    point_x: float,
+    point_y: float,
+    first: tuple[float, float],
+    second: tuple[float, float],
+    third: tuple[float, float],
+) -> bool:
+    def sign(
+        x1: float, y1: float, x2: float, y2: float, x3: float, y3: float
+    ) -> float:
+        return (x1 - x3) * (y2 - y3) - (x2 - x3) * (y1 - y3)
+
+    first_sign = sign(point_x, point_y, *first, *second)
+    second_sign = sign(point_x, point_y, *second, *third)
+    third_sign = sign(point_x, point_y, *third, *first)
+    has_negative = first_sign < 0 or second_sign < 0 or third_sign < 0
+    has_positive = first_sign > 0 or second_sign > 0 or third_sign > 0
+    return not (has_negative and has_positive)
+
+
+def _github_mark_contains(x: float, y: float) -> bool:
+    head = ((x - 0.52) / 0.245) ** 2 + ((y - 0.42) / 0.225) ** 2 <= 1
+    left_ear = _in_triangle(x, y, (0.30, 0.34), (0.31, 0.13), (0.44, 0.25))
+    right_ear = _in_triangle(x, y, (0.60, 0.25), (0.73, 0.13), (0.74, 0.35))
+    body = ((x - 0.52) / 0.185) ** 2 + ((y - 0.70) / 0.28) ** 2 <= 1
+    left_leg = 0.36 <= x <= 0.46 and 0.72 <= y <= 0.96
+    right_leg = 0.58 <= x <= 0.68 and 0.72 <= y <= 0.96
+    left_arm = _distance_to_segment(x, y, 0.39, 0.66, 0.27, 0.76) <= 0.055
+    tail_segments = (
+        (0.36, 0.68, 0.27, 0.69),
+        (0.27, 0.69, 0.19, 0.62),
+        (0.19, 0.62, 0.12, 0.52),
+        (0.12, 0.52, 0.14, 0.43),
+    )
+    tail = any(
+        _distance_to_segment(x, y, start_x, start_y, end_x, end_y) <= 0.045
+        for start_x, start_y, end_x, end_y in tail_segments
+    )
+    return head or left_ear or right_ear or body or left_leg or right_leg or left_arm or tail
+
+
+def _pixel_github_mark(
     *,
-    columns: int,
+    grid_size: int,
     origin_x: float,
     origin_y: float,
     max_width: float,
     max_height: float,
     color: str,
 ) -> str:
-    grayscale = image.convert("L")
-    rows = max(1, round(columns * grayscale.height / grayscale.width * 0.7))
-    sampled = grayscale.resize((columns, rows))
-    cell = min(max_width / columns, max_height / rows)
-    actual_width = columns * cell
-    actual_height = rows * cell
+    cell = min(max_width / grid_size, max_height / grid_size)
+    actual_width = grid_size * cell
+    actual_height = grid_size * cell
     start_x = origin_x + (max_width - actual_width) / 2
     start_y = origin_y + (max_height - actual_height) / 2
     dots: list[str] = []
-    for row in range(rows):
-        for column in range(columns):
-            darkness = (255 - sampled.getpixel((column, row))) / 255
-            if darkness < 0.1:
+    for row in range(grid_size):
+        for column in range(grid_size):
+            normalized_x = (column + 0.5) / grid_size
+            normalized_y = (row + 0.5) / grid_size
+            if not _github_mark_contains(normalized_x, normalized_y):
                 continue
-            radius = 0.35 + darkness * min(1.65, cell * 0.32)
             dots.append(
                 f'<circle cx="{start_x + (column + 0.5) * cell:.1f}" '
-                f'cy="{start_y + (row + 0.5) * cell:.1f}" r="{radius:.2f}" '
-                f'fill="{color}" fill-opacity="{0.24 + darkness * 0.76:.2f}"/>'
+                f'cy="{start_y + (row + 0.5) * cell:.1f}" r="{cell * 0.34:.2f}" '
+                f'fill="{color}"/>'
             )
-    return "".join(dots)
+    return f'<g id="pixel-github-mark">{"".join(dots)}</g>'
 
 
 def render_terminal_hero(
-    profile: ProfileConfig, image: Image.Image, config: dict, palette: dict[str, str]
+    profile: ProfileConfig, config: dict, palette: dict[str, str]
 ) -> str:
     width, height = 900, 390
     body = [_frame(width, height, palette), _shared_style()]
     body.append(_text(76, 28, "systems-console / identity", size=11, fill=palette["muted"], family=MONO))
     body.append(f'<rect x="24" y="68" width="286" height="292" rx="5" fill="{palette["panel"]}" stroke="{palette["border"]}"/>')
     body.append(
-        _portrait_dots(
-            image,
-            columns=int(config["portrait_columns"]),
+        _pixel_github_mark(
+            grid_size=int(config["logo_grid_size"]),
             origin_x=34,
             origin_y=77,
             max_width=266,
@@ -175,22 +235,21 @@ def render_terminal_hero(
         width,
         height,
         f"Systems Console identity for {profile.identity.name}",
-        f"Dark terminal identity panel for {profile.identity.name}, {profile.identity.headline}.",
+        f"Dark terminal identity panel with a pixel GitHub mark for {profile.identity.name}, {profile.identity.headline}.",
         "".join(body),
     )
 
 
 def render_terminal_hero_mobile(
-    profile: ProfileConfig, image: Image.Image, config: dict, palette: dict[str, str]
+    profile: ProfileConfig, config: dict, palette: dict[str, str]
 ) -> str:
     width, height = 390, 720
     body = [_frame(width, height, palette), _shared_style()]
     body.append(_text(76, 28, "systems-console / identity", size=10, fill=palette["muted"], family=MONO))
     body.append(f'<rect x="44" y="66" width="302" height="286" rx="5" fill="{palette["panel"]}" stroke="{palette["border"]}"/>')
     body.append(
-        _portrait_dots(
-            image,
-            columns=int(config["portrait_columns"]),
+        _pixel_github_mark(
+            grid_size=int(config["logo_grid_size"]),
             origin_x=54,
             origin_y=76,
             max_width=282,
@@ -217,7 +276,7 @@ def render_terminal_hero_mobile(
         body.append(_text(112, y, value, size=10, fill=palette["text"], family=MONO, css_class=css_class))
         y += 31
     body.append(f'<rect x="22" y="690" width="9" height="16" fill="{palette["green"]}" class="cursor"/>')
-    return _svg(width, height, f"Mobile Systems Console identity for {profile.identity.name}", "Mobile dark terminal identity panel with a dot-matrix portrait and professional profile facts.", "".join(body))
+    return _svg(width, height, f"Mobile Systems Console identity for {profile.identity.name}", "Mobile dark terminal identity panel with a pixel GitHub mark and professional profile facts.", "".join(body))
 
 
 def _iso_cube(
@@ -444,24 +503,21 @@ def render_project_board_mobile(profile: ProfileConfig, palette: dict[str, str])
 
 
 def render_all(
-    *, profile_path: Path, config_path: Path, portrait_path: Path, output_dir: Path
+    *, profile_path: Path, config_path: Path, output_dir: Path
 ) -> list[Path]:
     profile = load_profile(profile_path)
     config = _load_json(config_path)
     palette = config["palette"]
-    if not portrait_path.is_file():
-        raise ValueError(f"portrait input not found: {portrait_path}")
-    with Image.open(portrait_path) as image:
-        assets = {
-            "terminal-hero.svg": render_terminal_hero(profile, image, config, palette),
-            "terminal-hero-mobile.svg": render_terminal_hero_mobile(profile, image, config, palette),
-            "system-architecture.svg": render_system_architecture(profile, palette),
-            "system-architecture-mobile.svg": render_system_architecture_mobile(profile, palette),
-            "capability-deck.svg": render_capability_deck(profile, palette),
-            "capability-deck-mobile.svg": render_capability_deck_mobile(profile, palette),
-            "project-board.svg": render_project_board(profile, palette),
-            "project-board-mobile.svg": render_project_board_mobile(profile, palette),
-        }
+    assets = {
+        "terminal-hero.svg": render_terminal_hero(profile, config, palette),
+        "terminal-hero-mobile.svg": render_terminal_hero_mobile(profile, config, palette),
+        "system-architecture.svg": render_system_architecture(profile, palette),
+        "system-architecture-mobile.svg": render_system_architecture_mobile(profile, palette),
+        "capability-deck.svg": render_capability_deck(profile, palette),
+        "capability-deck-mobile.svg": render_capability_deck_mobile(profile, palette),
+        "project-board.svg": render_project_board(profile, palette),
+        "project-board-mobile.svg": render_project_board_mobile(profile, palette),
+    }
     written: list[Path] = []
     for name, content in assets.items():
         path = output_dir / name
@@ -474,14 +530,12 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Render Option 3 Systems Console assets")
     parser.add_argument("--profile", type=Path, default=DEFAULT_PROFILE_PATH)
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
-    parser.add_argument("--portrait", type=Path, default=DEFAULT_PORTRAIT)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args(argv)
     try:
         written = render_all(
             profile_path=args.profile,
             config_path=args.config,
-            portrait_path=args.portrait,
             output_dir=args.output_dir,
         )
     except (OSError, ValueError, json.JSONDecodeError) as exc:

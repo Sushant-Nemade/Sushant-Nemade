@@ -7,3 +7,4 @@
 - Replaced public activity and statistics with an animated pseudo-3D delivery architecture.
 - Added a capability command deck and selected-work system board.
 - Preserved Option 1 and Option 2 as independent switch targets.
+- Replaced the personal pixel portrait with a deterministic pixel GitHub mark generated directly as SVG dots.

@@ -6,7 +6,7 @@ Option 3 combines Option 1's living-terminal character with Option 2's structure
 
 ## Profile structure
 
-1. Composite dot portrait and animated terminal identity
+1. Generated pixel GitHub mark and animated terminal identity
 2. Mission and operating principles
 3. Capability command deck
 4. Pseudo-3D delivery architecture showing Discover, Evaluate, Build, Validate, Adopt
@@ -25,6 +25,6 @@ Option 3 combines Option 1's living-terminal character with Option 2's structure
 
 ## Reliability
 
-- All visual assets are generated locally from `config/profile.json` and the git-ignored processed portrait.
+- All visual assets are generated locally from `config/profile.json`; the pixel GitHub mark is constructed directly from SVG dots and needs no source image.
 - No third-party image, badge, font, analytics, or statistics service is required.
 - The candidate is validated for local asset paths, alt text, SVG safety, animation fallback, and mobile file size.

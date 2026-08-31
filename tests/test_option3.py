@@ -45,3 +45,11 @@ def test_validator_rejects_remote_images(tmp_path: Path) -> None:
 def test_all_assets_fit_mobile_budget() -> None:
     assets = REPO_ROOT / "options" / "option_3" / "assets"
     assert all(path.stat().st_size < 500_000 for path in assets.glob("*.svg"))
+
+
+def test_terminal_heroes_use_generated_pixel_github_mark() -> None:
+    assets = REPO_ROOT / "options" / "option_3" / "assets"
+    for name in ("terminal-hero.svg", "terminal-hero-mobile.svg"):
+        text = (assets / name).read_text(encoding="utf-8")
+        assert 'id="pixel-github-mark"' in text
+        assert "dot-matrix portrait" not in text.lower()
