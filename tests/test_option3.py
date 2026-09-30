@@ -6,9 +6,73 @@ from pathlib import Path
 
 from options.option_3.scripts.validate_profile import REPO_ROOT, validate_option_3
 
+PUBLIC_REPOSITORIES = (
+    "ai-chief-of-staff",
+    "voice-note-idea-catcher",
+    "whatsapp-assistant",
+    "ai-receptionist",
+    "ai-trip-planner",
+    "public-ship-log",
+    "comment-idea-generator",
+    "creator-collab-matchmaker",
+    "link-in-bio",
+    "money-dashboard",
+    "subscription-auditor",
+    "security-checker",
+    "applied-ai-systems-portfolio",
+    "forgeai-production-engine",
+    "sushant-nemade.github.io",
+    "Sushant-Nemade",
+    "dsss_homework_2",
+)
+FEATURED_PROJECTS = (
+    "Applied AI Systems Portfolio",
+    "ForgeAI Production Engine",
+    "Security Checker",
+    "Subscription Auditor",
+)
+
 
 def test_real_option_3_candidate_is_valid() -> None:
     assert validate_option_3() == []
+
+
+def test_candidate_catalogues_all_public_repositories() -> None:
+    text = (REPO_ROOT / "README.option-3.md").read_text(encoding="utf-8")
+    for repository in PUBLIC_REPOSITORIES:
+        assert f"https://github.com/Sushant-Nemade/{repository}" in text
+
+
+def test_candidate_has_professional_information_hierarchy() -> None:
+    text = (REPO_ROOT / "README.option-3.md").read_text(encoding="utf-8")
+    headings = (
+        "## 01 / Mission",
+        "## 02 / Delivery architecture",
+        "## 03 / Featured engineering systems",
+        "## 04 / Portfolio map",
+        "## 05 / Research case studies",
+        "## 06 / Operating context",
+        "## 07 / Contact",
+    )
+    anchors = (
+        "#01--mission",
+        "#02--delivery-architecture",
+        "#03--featured-engineering-systems",
+        "#04--portfolio-map",
+        "#05--research-case-studies",
+        "#07--contact",
+    )
+
+    assert all(heading in text for heading in headings)
+    assert all(anchor in text for anchor in anchors)
+    assert "trycloudflare.com" not in text
+
+
+def test_project_boards_show_public_flagships() -> None:
+    assets = REPO_ROOT / "options" / "option_3" / "assets"
+    for name in ("project-board.svg", "project-board-mobile.svg"):
+        text = (assets / name).read_text(encoding="utf-8")
+        assert all(project in text for project in FEATURED_PROJECTS)
 
 
 def test_previous_options_remain_available() -> None:

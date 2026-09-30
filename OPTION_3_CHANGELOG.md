@@ -1,5 +1,14 @@
 # Option 3 Changelog
 
+## 2026-09-30
+
+- Replaced the unpublished-work board with four verified public engineering systems.
+- Added a recruiter-focused portfolio map covering all 17 public repositories.
+- Grouped repositories by engineering signal and maturity instead of chronology.
+- Separated sanitized research case studies from publicly inspectable source repositories.
+- Added explicit maturity labels and excluded temporary preview-tunnel links.
+- Added regression coverage for featured-project layout, repository completeness and profile navigation.
+
 ## 2026-08-31
 
 - Created the dark Systems Console visual direction.

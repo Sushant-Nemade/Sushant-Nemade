@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import textwrap
 from pathlib import Path
 
 import pytest
@@ -74,6 +75,27 @@ def test_real_profile_and_theme_are_valid() -> None:
     assert profile.identity.github_username == "Sushant-Nemade"
     assert 1 <= len(profile.projects) <= 4
     assert theme.palette["accent_primary"] == "#38BDF8"
+
+
+def test_real_profile_featured_projects_are_board_ready() -> None:
+    profile = load_profile(REAL_PROFILE)
+    expected_names = {
+        "Applied AI Systems Portfolio",
+        "ForgeAI Production Engine",
+        "Security Checker",
+        "Subscription Auditor",
+    }
+
+    assert len(profile.projects) == 4
+    assert {project.name for project in profile.projects} == expected_names
+    for project in profile.projects:
+        assert project.display_state == "active"
+        assert project.repository_url is not None
+        assert project.repository_url.startswith("https://github.com/Sushant-Nemade/")
+        assert len(textwrap.wrap(project.name, width=39)) <= 2
+        assert len(textwrap.wrap(project.name, width=34)) <= 2
+        assert len(textwrap.wrap(project.description, width=58)) <= 3
+        assert len(textwrap.wrap(project.description, width=50)) <= 4
 
 
 def test_missing_profile_file_raises(tmp_path: Path) -> None:

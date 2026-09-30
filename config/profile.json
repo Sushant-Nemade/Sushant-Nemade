@@ -37,32 +37,32 @@
   ],
   "projects": [
     {
-      "name": "Urban Change Detection and Change Captioning",
-      "description": "Designed and evaluated AI-assisted pipelines for bi-temporal satellite imagery, covering change detection, change captioning, benchmarking and retrieval-oriented interpretation.",
-      "technologies": ["Python", "PyTorch", "Computer Vision", "Model Benchmarking", "Retrieval Patterns"],
-      "repository_url": null,
-      "display_state": "case_study_in_preparation"
+      "name": "Applied AI Systems Portfolio",
+      "description": "Eight self-hosted AI services covering grounded document QA, research, voice, RAG evaluation and guardrails.",
+      "technologies": ["Python", "FastAPI", "Ollama", "Docker"],
+      "repository_url": "https://github.com/Sushant-Nemade/applied-ai-systems-portfolio",
+      "display_state": "active"
     },
     {
-      "name": "Enterprise GenAI and Agentic Automation Exploration",
-      "description": "Explored enterprise LLM, RAG, conversational-assistant and agentic workflow use cases through value, feasibility, reliability, governance and human-approval considerations.",
-      "technologies": ["Azure OpenAI", "Copilot Studio", "RAG", "Prompt Engineering", "Workflow Automation"],
-      "repository_url": null,
-      "display_state": "case_study_in_preparation"
+      "name": "ForgeAI Production Engine",
+      "description": "Auditable async orchestration with typed contracts, fail-closed security QA, PostgreSQL persistence and observability.",
+      "technologies": ["Python", "FastAPI", "PostgreSQL", "Prometheus"],
+      "repository_url": "https://github.com/Sushant-Nemade/forgeai-production-engine",
+      "display_state": "active"
     },
     {
-      "name": "Glottal Area Segmentation Using Deep Learning",
-      "description": "Implemented a U-Net-based segmentation workflow in PyTorch using the BAGLS benchmark and reproducible model-evaluation practices.",
-      "technologies": ["Python", "PyTorch", "U-Net", "Computer Vision", "Image Segmentation"],
-      "repository_url": null,
-      "display_state": "case_study_in_preparation"
+      "name": "Security Checker",
+      "description": "Local secret-scanning CLI with redacted findings, configurable rules, SARIF output and GitHub Actions support.",
+      "technologies": ["TypeScript", "SARIF", "GitHub Actions", "DevSecOps"],
+      "repository_url": "https://github.com/Sushant-Nemade/security-checker",
+      "display_state": "active"
     },
     {
-      "name": "Solar Panel Fault Classification",
-      "description": "Fine-tuned a ResNet50 model for solar-panel fault classification and framed the solution as an AI-assisted inspection and predictive-maintenance use case.",
-      "technologies": ["Python", "PyTorch", "ResNet50", "Computer Vision", "Transfer Learning"],
-      "repository_url": null,
-      "display_state": "case_study_in_preparation"
+      "name": "Subscription Auditor",
+      "description": "Browser-local CSV and PDF analysis that identifies recurring payments without uploading financial data.",
+      "technologies": ["TypeScript", "Next.js", "CSV/PDF", "Local-first"],
+      "repository_url": "https://github.com/Sushant-Nemade/subscription-auditor",
+      "display_state": "active"
     }
   ]
 }

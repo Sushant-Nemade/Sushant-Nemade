@@ -5,7 +5,7 @@
   <img src="options/option_3/assets/terminal-hero.svg" width="900" alt="Dark live terminal profile for Sushant Nemade with an animated SN Signal Core and professional system information">
 </picture>
 
-[Mission](#01--mission) &nbsp;&middot;&nbsp; [Architecture](#02--delivery-architecture) &nbsp;&middot;&nbsp; [Selected systems](#03--selected-systems) &nbsp;&middot;&nbsp; [Contact](#05--contact)
+[Mission](#01--mission) &nbsp;&middot;&nbsp; [Architecture](#02--delivery-architecture) &nbsp;&middot;&nbsp; [Featured systems](#03--featured-engineering-systems) &nbsp;&middot;&nbsp; [Portfolio](#04--portfolio-map) &nbsp;&middot;&nbsp; [Research](#05--research-case-studies) &nbsp;&middot;&nbsp; [Contact](#07--contact)
 
 </div>
 
@@ -35,15 +35,87 @@ The moving signal represents work progressing through five delivery stages. The 
 
 **Control plane:** Responsible AI, GDPR awareness and human oversight.
 
-## 03 / Selected systems
+## 03 / Featured engineering systems
 
 <picture>
   <source media="(max-width: 600px)" srcset="options/option_3/assets/project-board-mobile.svg">
-  <img src="options/option_3/assets/project-board.svg" width="900" alt="Dark systems board showing four selected AI, GenAI and computer-vision case studies">
+  <img src="options/option_3/assets/project-board.svg" width="900" alt="Dark systems board showing four public AI engineering, security and privacy-focused projects">
 </picture>
 
+### [Applied AI Systems Portfolio](https://github.com/Sushant-Nemade/applied-ai-systems-portfolio)
+
+Eight self-hosted FastAPI workflows for document QA, sentiment analysis, news extraction, PR review, research, voice, RAG evaluation and LLM guardrails. The repository includes local-model defaults, bounded inputs, source provenance, API authentication, tests and CI.
+
+**Stack:** Python, FastAPI, Ollama, Docker | **Status:** Tested reference implementation
+
+### [ForgeAI Production Engine](https://github.com/Sushant-Nemade/forgeai-production-engine)
+
+An auditable control plane that converts constrained product briefs into typed contracts and security-gated execution results. It demonstrates async orchestration, explicit state transitions, PostgreSQL persistence, JWT authentication, migrations, CI and Prometheus/Grafana telemetry.
+
+**Stack:** Python, FastAPI, PostgreSQL, Prometheus | **Status:** Production-oriented architecture
+
+### [Security Checker](https://github.com/Sushant-Nemade/security-checker)
+
+A local secret-scanning CLI and browser tool that redacts detected values, supports configurable rules and exports SARIF for GitHub code scanning. It keeps source content local and documents the boundary between screening signals and confirmed findings.
+
+**Stack:** TypeScript, SARIF, GitHub Actions, DevSecOps | **Status:** Working developer tool
+
+### [Subscription Auditor](https://github.com/Sushant-Nemade/subscription-auditor)
+
+A browser-local application that parses CSV or text-based PDF statements and estimates recurring monthly or annual payments. Financial files remain on the device, and the detector's assumptions and false-positive risks are documented.
+
+**Stack:** TypeScript, Next.js, CSV/PDF processing, local-first design | **Status:** Tested local-first application
+
+## 04 / Portfolio map
+
+The portfolio is grouped by engineering signal rather than chronology. Public previews use fictional data unless a repository explicitly documents configured integrations.
+
+### Production-oriented AI engineering
+
+- [Applied AI Systems Portfolio](https://github.com/Sushant-Nemade/applied-ai-systems-portfolio) - self-hosted AI services with retrieval, evaluation, guardrails and local inference.
+- [ForgeAI Production Engine](https://github.com/Sushant-Nemade/forgeai-production-engine) - typed multi-agent orchestration with fail-closed QA, persistence and observability.
+
+### Responsible automation and conversational systems
+
+- [AI Receptionist](https://github.com/Sushant-Nemade/ai-receptionist) - signed Twilio webhook routes, Supabase logging, FAQ lookup and escalation boundaries.
+- [WhatsApp Business Assistant](https://github.com/Sushant-Nemade/whatsapp-assistant) - verified Meta webhooks, intent routing and optional order lookup in an Express service.
+- [AI Chief of Staff](https://github.com/Sushant-Nemade/ai-chief-of-staff) - protected Gmail and Calendar briefing workflow with scheduled delivery controls.
+- [Voice Note Idea Catcher](https://github.com/Sushant-Nemade/voice-note-idea-catcher) - browser recording, optional Whisper transcription and structured action extraction.
+
+### Trustworthy data and developer tools
+
+- [Security Checker](https://github.com/Sushant-Nemade/security-checker) - local credential screening with redaction, SARIF output and GitHub Actions support.
+- [Subscription Auditor](https://github.com/Sushant-Nemade/subscription-auditor) - private, browser-side recurring-payment analysis for CSV and PDF statements.
+- [Money Dashboard](https://github.com/Sushant-Nemade/money-dashboard) - authenticated income records, Prisma persistence and revenue aggregation using integer-cent accounting.
+
 <details>
-<summary><strong>Open the case files</strong></summary>
+<summary><strong>Open the product prototype lab and portfolio infrastructure</strong></summary>
+
+### Product prototype lab
+
+- [Comment Idea Generator](https://github.com/Sushant-Nemade/comment-idea-generator) - local comment classification, content planning and CSV or Markdown export.
+- [Creator Collab Matchmaker](https://github.com/Sushant-Nemade/creator-collab-matchmaker) - deterministic creator ranking by shared interests, goals and audience proximity.
+- [AI Trip Planner](https://github.com/Sushant-Nemade/ai-trip-planner) - interactive itinerary construction with manually grouped destinations and Maps search links.
+- [Public Ship Log](https://github.com/Sushant-Nemade/public-ship-log) - browser-local project timeline and timezone-aware shipping streaks.
+- [Custom Link in Bio](https://github.com/Sushant-Nemade/link-in-bio) - locally editable link page with themes, ordering and privacy-conscious click counts.
+
+### Portfolio engineering
+
+- [Interactive Portfolio](https://github.com/Sushant-Nemade/sushant-nemade.github.io) - dependency-free HTML, CSS and JavaScript terminal portfolio with keyboard interaction and responsive layouts.
+- [GitHub Profile Systems Console](https://github.com/Sushant-Nemade/Sushant-Nemade) - config-driven SVG profile assets, responsive variants, validation and scheduled automation.
+
+### Learning archive
+
+- [DSSS Homework 2](https://github.com/Sushant-Nemade/dsss_homework_2) - earlier Python packaging coursework built around a mathematics quiz.
+
+</details>
+
+## 05 / Research case studies
+
+The following work is presented at a sanitized capability level. Public case-study repositories are not yet available, and no internal systems, datasets or business details are disclosed.
+
+<details>
+<summary><strong>Open the research summaries</strong></summary>
 
 ### Urban Change Detection and Change Captioning
 
@@ -55,7 +127,7 @@ Designed and evaluated AI-assisted pipelines for bi-temporal satellite imagery, 
 
 ### Enterprise GenAI and Agentic Automation Exploration
 
-Explored enterprise LLM, RAG, conversational-assistant and agentic workflow use cases through value, feasibility, reliability, governance and human-approval considerations. Described here only at a sanitized capability level; no internal systems, datasets or business details are disclosed.
+Explored enterprise LLM, RAG, conversational-assistant and agentic workflow use cases through value, feasibility, reliability, governance and human-approval considerations.
 
 **Technologies:** Azure OpenAI, Copilot Studio, RAG, Prompt Engineering, Workflow Automation
 
@@ -79,7 +151,7 @@ Fine-tuned a ResNet50 model for solar-panel fault classification and framed the 
 
 </details>
 
-## 04 / Operating context
+## 06 / Operating context
 
 | Context | Experience |
 |---|---|
@@ -94,8 +166,9 @@ Fine-tuned a ResNet50 model for solar-panel fault classification and framed the 
 
 **Status:** Open to full-time Data and AI opportunities.
 
-## 05 / Contact
+## 07 / Contact
 
+- [Interactive portfolio](https://sushant-nemade.github.io/)
 - [LinkedIn](https://www.linkedin.com/in/sushant-nemade1998/)
 - [GitHub repositories](https://github.com/Sushant-Nemade?tab=repositories)
 
