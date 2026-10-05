@@ -75,26 +75,31 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 - [Applied AI Systems Portfolio](https://github.com/Sushant-Nemade/applied-ai-systems-portfolio) - self-hosted AI services with retrieval, evaluation, guardrails and local inference.
 - [ForgeAI Production Engine](https://github.com/Sushant-Nemade/forgeai-production-engine) - typed multi-agent orchestration with fail-closed QA, persistence and observability.
 
+### Interactive AI and learning systems
+
+- [AI Werewolf Arena](https://github.com/Sushant-Nemade/ai-werewolf-arena) - multi-agent social deduction with episodic memory, guardrails, decision tracing and an ELO evaluation harness.
+- [NeuroDrive](https://github.com/Sushant-Nemade/neurodrive) - browser-based driving simulation with a neural network and genetic algorithm.
+
 ### Responsible automation and conversational systems
 
-- [AI Receptionist](https://github.com/Sushant-Nemade/ai-receptionist) - signed Twilio webhook routes, Supabase logging, FAQ lookup and escalation boundaries.
-- [WhatsApp Business Assistant](https://github.com/Sushant-Nemade/whatsapp-assistant) - verified Meta webhooks, intent routing and optional order lookup in an Express service.
-- [AI Chief of Staff](https://github.com/Sushant-Nemade/ai-chief-of-staff) - protected Gmail and Calendar briefing workflow with scheduled delivery controls.
+- [AI Receptionist](https://github.com/Sushant-Nemade/ai-receptionist) - signed Twilio routes, FAQ lookup and Supabase logging; live integrations remain unverified.
+- [WhatsApp Business Assistant](https://github.com/Sushant-Nemade/whatsapp-assistant) - verified Meta webhooks and intent routing; the public UI is a simulator, not a live messaging integration.
+- [AI Chief of Staff](https://github.com/Sushant-Nemade/ai-chief-of-staff) - Gmail and Calendar briefing prototype; durable Google OAuth is not implemented and scheduled delivery requires configuration.
 - [Voice Note Idea Catcher](https://github.com/Sushant-Nemade/voice-note-idea-catcher) - browser recording, optional Whisper transcription and structured action extraction.
 
 ### Trustworthy data and developer tools
 
 - [Security Checker](https://github.com/Sushant-Nemade/security-checker) - local credential screening with redaction, SARIF output and GitHub Actions support.
 - [Subscription Auditor](https://github.com/Sushant-Nemade/subscription-auditor) - private, browser-side recurring-payment analysis for CSV and PDF statements.
-- [Money Dashboard](https://github.com/Sushant-Nemade/money-dashboard) - authenticated income records, Prisma persistence and revenue aggregation using integer-cent accounting.
+- [Money Dashboard](https://github.com/Sushant-Nemade/money-dashboard) - protected income records and integer-cent revenue aggregation with Prisma-backed SQLite; single-admin demo with fictional sample data.
 
 <details>
 <summary><strong>Open the product prototype lab and portfolio infrastructure</strong></summary>
 
 ### Product prototype lab
 
-- [Comment Idea Generator](https://github.com/Sushant-Nemade/comment-idea-generator) - local comment classification, content planning and CSV or Markdown export.
-- [Creator Collab Matchmaker](https://github.com/Sushant-Nemade/creator-collab-matchmaker) - deterministic creator ranking by shared interests, goals and audience proximity.
+- [Comment Idea Generator](https://github.com/Sushant-Nemade/comment-idea-generator) - browser-local pasted-comment grouping, content planning and export; no connected social ingestion or model clustering.
+- [Creator Collab Matchmaker](https://github.com/Sushant-Nemade/creator-collab-matchmaker) - deterministic ranking using fictional profiles; no account or messaging integration.
 - [AI Trip Planner](https://github.com/Sushant-Nemade/ai-trip-planner) - interactive itinerary construction with manually grouped destinations and Maps search links.
 - [Public Ship Log](https://github.com/Sushant-Nemade/public-ship-log) - browser-local project timeline and timezone-aware shipping streaks.
 - [Custom Link in Bio](https://github.com/Sushant-Nemade/link-in-bio) - locally editable link page with themes, ordering and privacy-conscious click counts.
@@ -107,6 +112,11 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 ### Learning archive
 
 - [DSSS Homework 2](https://github.com/Sushant-Nemade/dsss_homework_2) - earlier Python packaging coursework built around a mathematics quiz.
+
+### Public forks
+
+- [CareerOps](https://github.com/Sushant-Nemade/career-ops) - portfolio fork of [career-ops-hq/career-ops](https://github.com/career-ops-hq/career-ops), a local-first, human-in-the-loop AI job-search agent.
+- [AI Job Search](https://github.com/Sushant-Nemade/ai-job-search) - portfolio fork of [MadsLorentzen/ai-job-search](https://github.com/MadsLorentzen/ai-job-search), an AI-assisted job discovery and application workflow.
 
 </details>
 
