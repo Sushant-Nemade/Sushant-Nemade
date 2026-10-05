@@ -86,6 +86,7 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 - [WhatsApp Business Assistant](https://github.com/Sushant-Nemade/whatsapp-assistant) - verified Meta webhooks and intent routing; the public UI is a simulator, not a live messaging integration.
 - [AI Chief of Staff](https://github.com/Sushant-Nemade/ai-chief-of-staff) - Gmail and Calendar briefing prototype; durable Google OAuth is not implemented and scheduled delivery requires configuration.
 - [Voice Note Idea Catcher](https://github.com/Sushant-Nemade/voice-note-idea-catcher) - browser recording, optional Whisper transcription and structured action extraction.
+- [AI Blog Publisher](https://github.com/Sushant-Nemade/ai-blog-publisher) - attributed BlogBoard derivative with private drafts, digest-bound approval and sanitized static articles; tested reference implementation with live AI/search/R2 integrations unverified.
 
 ### Trustworthy data and developer tools
 
@@ -108,6 +109,7 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 
 - [Interactive Portfolio](https://github.com/Sushant-Nemade/sushant-nemade.github.io) - dependency-free HTML, CSS and JavaScript terminal portfolio with keyboard interaction and responsive layouts.
 - [GitHub Profile Systems Console](https://github.com/Sushant-Nemade/Sushant-Nemade) - config-driven SVG profile assets, responsive variants, validation and scheduled automation.
+- [AI Project Gallery](https://github.com/Sushant-Nemade/ai-project-gallery) - categorized project catalog with upstream attribution, verification status and a one-project-at-a-time delivery backlog.
 
 ### Learning archive
 
