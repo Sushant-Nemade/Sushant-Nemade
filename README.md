@@ -93,6 +93,7 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 - [Security Checker](https://github.com/Sushant-Nemade/security-checker) - local credential screening with redaction, SARIF output and GitHub Actions support.
 - [Subscription Auditor](https://github.com/Sushant-Nemade/subscription-auditor) - private, browser-side recurring-payment analysis for CSV and PDF statements.
 - [Money Dashboard](https://github.com/Sushant-Nemade/money-dashboard) - protected income records and integer-cent revenue aggregation with Prisma-backed SQLite; single-admin demo with fictional sample data.
+- [GitPulse Audience Workspace](https://github.com/Sushant-Nemade/gitpulse) - original implementation inspired by GitPulse's documented concept, with atomic SQLite snapshots, append-only observations and a typed dashboard; public REST sync verified, hosted private API unverified.
 
 <details>
 <summary><strong>Open the product prototype lab and portfolio infrastructure</strong></summary>
