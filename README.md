@@ -94,6 +94,7 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 - [Subscription Auditor](https://github.com/Sushant-Nemade/subscription-auditor) - private, browser-side recurring-payment analysis for CSV and PDF statements.
 - [Money Dashboard](https://github.com/Sushant-Nemade/money-dashboard) - protected income records and integer-cent revenue aggregation with Prisma-backed SQLite; single-admin demo with fictional sample data.
 - [GitPulse Audience Workspace](https://github.com/Sushant-Nemade/gitpulse) - original implementation inspired by GitPulse's documented concept, with atomic SQLite snapshots, append-only observations and a typed dashboard; public REST sync verified, hosted private API unverified.
+- [Doclify](https://github.com/Sushant-Nemade/Doclify) - attributed AGPLv3 documentation CLI with bounded source discovery, incremental caching and digest-bound reviewed publication; offline workflows, packaging and cross-platform CI verified, live Groq inference unverified.
 
 <details>
 <summary><strong>Open the product prototype lab and portfolio infrastructure</strong></summary>
