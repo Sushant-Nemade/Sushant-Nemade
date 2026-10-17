@@ -75,8 +75,9 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 - [Applied AI Systems Portfolio](https://github.com/Sushant-Nemade/applied-ai-systems-portfolio) - self-hosted AI services with retrieval, evaluation, guardrails and local inference.
 - [ForgeAI Production Engine](https://github.com/Sushant-Nemade/forgeai-production-engine) - typed multi-agent orchestration with fail-closed QA, persistence and observability.
 
-### Interactive AI and learning systems
+### Interactive AI, computer vision and learning systems
 
+- [Urban Change Detection & Change Captioning](https://github.com/Sushant-Nemade/urban-change-detection-captioning) - Master's thesis adapting the dual-head SegFormer MiT-B1 and Transformer MCI model on LEVIR-MCI (10,077 original and 15,115 augmented pairs) with bidirectional temporal-reversal augmentation for removal/deconstruction cases, CLI/Streamlit/FastAPI workflows, 31 pytest checks and SHA-256 verified [model weights](https://huggingface.co/sushantnemade/MCI_augmented) and [augmented dataset](https://huggingface.co/datasets/sushantnemade/LEVIR-MCI-augmented); CPU inference and numerical equivalence verified, full-dataset benchmark reproduction and mixed upstream licensing (MIT Change-Agent/COCO-caption plus NVIDIA non-commercial SegFormer terms) documented.
 - [AI Werewolf Arena](https://github.com/Sushant-Nemade/ai-werewolf-arena) - multi-agent social deduction with episodic memory, guardrails, decision tracing and an ELO evaluation harness.
 - [NeuroDrive](https://github.com/Sushant-Nemade/neurodrive) - browser-based driving simulation with a neural network and genetic algorithm.
 
@@ -96,8 +97,8 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 - [GitPulse Audience Workspace](https://github.com/Sushant-Nemade/gitpulse) - original implementation inspired by GitPulse's documented concept, with atomic SQLite snapshots, append-only observations and a typed dashboard; public REST sync verified, hosted private API unverified.
 - [Doclify](https://github.com/Sushant-Nemade/Doclify) - attributed AGPLv3 documentation CLI with bounded source discovery, incremental caching and digest-bound reviewed publication; offline workflows, packaging and cross-platform CI verified, live Groq inference unverified.
 - [Market Insight](https://github.com/Sushant-Nemade/MarketInsight) - attributed GPLv3 financial research workbench with bounded Yahoo Finance retrieval, source-dated tables and private SQLite reports; complete sample workflow, Linux/Windows CI and container checks verified, paid AI inference unverified.
-- [Software Intake Gatekeeper](https://github.com/Sushant-Nemade/software-intake-gatekeeper) - read-only intake checks for third-party apps and binaries: CycloneDX SBOM from Go build info, npm/ASAR and NuGet manifests, opt-in OSV vulnerability lookup, Electron fuse and webPreferences rules, SARIF and an expiring-waiver policy gate, plus a v0.2.0 update check that gates on new vulnerabilities, weakened fuses, new endpoints and new native modules; published on [PyPI](https://pypi.org/project/software-intake-gatekeeper/) and the [GitHub Marketplace](https://github.com/marketplace/actions/software-intake-gatekeeper) with provenance-attested artifacts; Linux/Windows CI and live-OSV action runs on Linux, Windows and macOS verified, findings are version-level evidence rather than reachability.
-- [Privacy Flow Inspector](https://github.com/Sushant-Nemade/privacy-flow-inspector) - offline privacy gate for recorded web traffic (HAR): test-persona matching including hashed and Base64 forms, checksum-verified IBAN, Steuer-ID and KVNR detectors, health-data fields, first/third-party data-flow map, approved processors and expiring waivers, SARIF and a self-checked redacted HAR; published on [PyPI](https://pypi.org/project/privacy-flow-inspector/) and the [GitHub Marketplace](https://github.com/marketplace/actions/privacy-flow-inspector); CI re-records a fictional demo with real Chromium and runs the action on Linux, Windows and macOS; technical evidence for privacy reviews, not legal advice.
+- [Software Intake Gatekeeper](https://github.com/Sushant-Nemade/software-intake-gatekeeper) - read-only intake checks for third-party apps and binaries: CycloneDX SBOM from Go build info, npm/ASAR and NuGet manifests, opt-in OSV vulnerability lookup, Electron fuse and webPreferences rules, SARIF and an expiring-waiver policy gate, plus v0.2.0-v0.2.2 update checks that gate on new vulnerabilities, weakened fuses, string-literal endpoints and native modules with stable-path bundle matching; published on [PyPI](https://pypi.org/project/software-intake-gatekeeper/) and the [GitHub Marketplace](https://github.com/marketplace/actions/software-intake-gatekeeper) with provenance-attested artifacts; Linux/Windows CI and live-OSV action runs on Linux, Windows and macOS verified, findings are version-level evidence rather than reachability.
+- [Privacy Flow Inspector](https://github.com/Sushant-Nemade/privacy-flow-inspector) - offline privacy gate for recorded web traffic (HAR): test-persona matching including hashed and Base64 forms, checksum-verified IBAN, Steuer-ID and KVNR detectors, health-data fields, first/third-party data-flow map with v0.2.0 third-party eTLD+1 inventory and opt-in connection gating, approved processors and expiring waivers, SARIF and a self-checked redacted HAR; published on [PyPI](https://pypi.org/project/privacy-flow-inspector/) and the [GitHub Marketplace](https://github.com/marketplace/actions/privacy-flow-inspector); CI re-records a fictional demo with real Chromium and runs the action on Linux, Windows and macOS; technical evidence for privacy reviews, not legal advice.
 
 <details>
 <summary><strong>Open the product prototype lab and portfolio infrastructure</strong></summary>
@@ -129,18 +130,18 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 
 ## 05 / Research case studies
 
-The following work is presented at a sanitized capability level. Public case-study repositories are not yet available, and no internal systems, datasets or business details are disclosed.
+The Master's thesis repository and artifacts are publicly available; additional academic and enterprise studies are presented at a sanitized capability level without disclosing internal systems, datasets or business details.
 
 <details>
 <summary><strong>Open the research summaries</strong></summary>
 
-### Urban Change Detection and Change Captioning
+### [Urban Change Detection and Change Captioning](https://github.com/Sushant-Nemade/urban-change-detection-captioning)
 
-Designed and evaluated AI-assisted pipelines for bi-temporal satellite imagery, covering change detection, change captioning, benchmarking and retrieval-oriented interpretation.
+Adapted the dual-head SegFormer MiT-B1 and Transformer MCI architecture for bi-temporal satellite road/building change segmentation and natural-language captioning on LEVIR-MCI, adding bidirectional temporal-reversal augmentation for removal/deconstruction scenarios and a packaged CLI, Streamlit and FastAPI workflow.
 
-**Technologies:** Python, PyTorch, Computer Vision, Model Benchmarking, Retrieval Patterns
+**Technologies:** Python, PyTorch, SegFormer MiT-B1, Transformer, Computer Vision, Model Benchmarking
 
-**Status:** Case study in preparation
+**Status:** Published Master's thesis implementation ([Repository](https://github.com/Sushant-Nemade/urban-change-detection-captioning) · [Model weights](https://huggingface.co/sushantnemade/MCI_augmented) · [Augmented dataset](https://huggingface.co/datasets/sushantnemade/LEVIR-MCI-augmented) · [Validation](https://github.com/Sushant-Nemade/urban-change-detection-captioning/blob/main/docs/results.md))
 
 ### Enterprise GenAI and Agentic Automation Exploration
 
