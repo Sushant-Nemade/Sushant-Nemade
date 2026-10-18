@@ -70,6 +70,18 @@ A browser-local application that parses CSV or text-based PDF statements and est
 
 The portfolio is grouped by engineering signal rather than chronology. Public previews use fictional data unless a repository explicitly documents configured integrations.
 
+### Public demos
+
+[Open the demo directory](https://sushant-ai-demos.pages.dev/). These Cloudflare Pages reference builds are publicly hosted and do not require my local computer to be running. Private APIs and AI credentials are not exposed.
+
+| Project | Public access | Reference scope |
+| --- | --- | --- |
+| AI Blog Publisher | [Open demo](https://sushant-ai-demos.pages.dev/ai-blog-publisher/) | Synthetic article reader |
+| GitPulse | [Open demo](https://sushant-ai-demos.pages.dev/gitpulse/) | Fictional audience dashboard |
+| Market Insight | [Open demo](https://sushant-ai-demos.pages.dev/MarketInsight/) | Fictional financial research |
+| TravelBrain | [Open demo](https://sushant-ai-demos.pages.dev/TravelBrain/) | Browser planner; illustrative budgets |
+| Doclify | [Download CLI](https://github.com/Sushant-Nemade/Doclify/releases/tag/v0.3.0-reference) | Installable tool, not a hosted upload service |
+
 ### Production-oriented AI engineering
 
 - [Applied AI Systems Portfolio](https://github.com/Sushant-Nemade/applied-ai-systems-portfolio) - self-hosted AI services with retrieval, evaluation, guardrails and local inference.
