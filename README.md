@@ -88,6 +88,7 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 - [AI Chief of Staff](https://github.com/Sushant-Nemade/ai-chief-of-staff) - Gmail and Calendar briefing prototype; durable Google OAuth is not implemented and scheduled delivery requires configuration.
 - [Voice Note Idea Catcher](https://github.com/Sushant-Nemade/voice-note-idea-catcher) - browser recording, optional Whisper transcription and structured action extraction.
 - [AI Blog Publisher](https://github.com/Sushant-Nemade/ai-blog-publisher) - attributed BlogBoard derivative with private drafts, digest-bound approval and sanitized static articles; tested reference implementation with live AI/search/R2 integrations unverified.
+- [TravelBrain](https://github.com/Sushant-Nemade/TravelBrain) - attributed GPLv3 trip workbench for Paris, Lisbon and Kyoto with source-linked itineraries, illustrative budgets, browser/private SQLite saves and exports; cross-runtime planning, browser workflows and live Open-Meteo weather verified, Groq inference unverified.
 
 ### Trustworthy data and developer tools
 
