@@ -72,7 +72,7 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 
 ### Public demos
 
-[Open the demo directory](https://sushant-ai-demos.pages.dev/). These Cloudflare Pages reference builds are publicly hosted and do not require my local computer to be running. Private APIs and AI credentials are not exposed.
+[Cloudflare reference collection](https://sushant-ai-demos.pages.dev/) and the individual GitHub Pages model below are publicly hosted and do not require my local computer to be running. Private APIs and AI credentials are not exposed.
 
 | Project | Public access | Reference scope |
 | --- | --- | --- |
@@ -80,6 +80,7 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 | GitPulse | [Open demo](https://sushant-ai-demos.pages.dev/gitpulse/) | Fictional audience dashboard |
 | Market Insight | [Open demo](https://sushant-ai-demos.pages.dev/MarketInsight/) | Fictional financial research |
 | TravelBrain | [Open demo](https://sushant-ai-demos.pages.dev/TravelBrain/) | Browser planner; illustrative budgets |
+| Airbnb Price Workbench | [Open model](https://sushant-nemade.github.io/airbnb-price-workbench/) | Actual browser ONNX inference; NYC2019 benchmark |
 | Doclify | [Download CLI](https://github.com/Sushant-Nemade/Doclify/releases/tag/v0.3.0-reference) | Installable tool, not a hosted upload service |
 
 ### Production-oriented AI engineering
@@ -89,6 +90,7 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 
 ### Interactive AI, computer vision and learning systems
 
+- [Airbnb Price Workbench](https://github.com/Sushant-Nemade/airbnb-price-workbench) - original MIT implementation with separately licensed NYC2019 data, host-disjoint training/evaluation, calibrated uncertainty and actual browser ONNX inference; test MAE $48.80 versus $52.66 borough/room baseline, 18 Python tests, 16 browser cases, 30 sklearn/browser parity scenarios and independent data/training reproduction verified. Historical benchmark, not current rental quotes or bookings; no code/model/data imported from the unlicensed gallery reference.
 - [Urban Change Detection & Change Captioning](https://github.com/Sushant-Nemade/urban-change-detection-captioning) - Master's thesis adapting the dual-head SegFormer MiT-B1 and Transformer MCI model on LEVIR-MCI (10,077 original and 15,115 augmented pairs) with bidirectional temporal-reversal augmentation for removal/deconstruction cases, CLI/Streamlit/FastAPI workflows, 31 pytest checks and SHA-256 verified [model weights](https://huggingface.co/sushantnemade/MCI_augmented) and [augmented dataset](https://huggingface.co/datasets/sushantnemade/LEVIR-MCI-augmented); CPU inference and numerical equivalence verified, full-dataset benchmark reproduction and mixed upstream licensing (MIT Change-Agent/COCO-caption plus NVIDIA non-commercial SegFormer terms) documented.
 - [AI Werewolf Arena](https://github.com/Sushant-Nemade/ai-werewolf-arena) - multi-agent social deduction with episodic memory, guardrails, decision tracing and an ELO evaluation harness.
 - [NeuroDrive](https://github.com/Sushant-Nemade/neurodrive) - browser-based driving simulation with a neural network and genetic algorithm.
