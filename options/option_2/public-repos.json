@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "username": "Sushant-Nemade",
-  "retrieved_at": "2026-08-31T19:35:01+00:00",
+  "retrieved_at": "2026-10-23T14:17:31+00:00",
   "source": "https://api.github.com/users/Sushant-Nemade/repos",
   "repositories": [
     {
@@ -10,7 +10,352 @@
       "description": null,
       "primary_language": "Python",
       "languages": {
-        "Python": 97682
+        "Python": 165577,
+        "HTML": 5340
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "sushant-nemade.github.io",
+      "url": "https://github.com/Sushant-Nemade/sushant-nemade.github.io",
+      "description": null,
+      "primary_language": "HTML",
+      "languages": {
+        "HTML": 70108,
+        "CSS": 1594
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "ai-project-gallery",
+      "url": "https://github.com/Sushant-Nemade/ai-project-gallery",
+      "description": "Categorized AI project portfolio: attributed upstream sources, one-project-at-a-time delivery, and evidence-based release status.",
+      "primary_language": "Python",
+      "languages": {
+        "Python": 25442
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "airbnb-price-workbench",
+      "url": "https://github.com/Sushant-Nemade/airbnb-price-workbench",
+      "description": "Original MIT NYC2019 price benchmark: host-disjoint training/evaluation, calibrated uncertainty, real browser ONNX inference and bounded API.",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 41196,
+        "Python": 33314,
+        "CSS": 10894,
+        "JavaScript": 3233,
+        "Dockerfile": 1117,
+        "HTML": 323
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "gitpulse",
+      "url": "https://github.com/Sushant-Nemade/gitpulse",
+      "description": "Original GitHub audience tracker inspired by GitPulse: typed API, atomic snapshots, append-only history and a fictional Pages demo.",
+      "primary_language": "Python",
+      "languages": {
+        "Python": 26410,
+        "TypeScript": 20807,
+        "CSS": 7467,
+        "JavaScript": 640,
+        "HTML": 461
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "ai-blog-publisher",
+      "url": "https://github.com/Sushant-Nemade/ai-blog-publisher",
+      "description": "Attributed BlogBoard derivative with private drafts, digest-bound publication, safe Markdown, and tested static delivery. Live AI integrations remain unverified.",
+      "primary_language": "Python",
+      "languages": {
+        "Python": 55306,
+        "CSS": 37612,
+        "JavaScript": 33120,
+        "HTML": 27489
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "privacy-flow-inspector",
+      "url": "https://github.com/Sushant-Nemade/privacy-flow-inspector",
+      "description": "Offline privacy gate for recorded web traffic: which personal data leaves the browser, to whom and how, incl. WebSocket and compressed payloads. Persona matching, checked detectors (IBAN, Steuer-ID, KVNR), GDPR data-flow map, SARIF, redacted HAR.",
+      "primary_language": "Python",
+      "languages": {
+        "Python": 134335
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "software-intake-gatekeeper",
+      "url": "https://github.com/Sushant-Nemade/software-intake-gatekeeper",
+      "description": "Evidence-first intake checks for third-party apps and binaries: CycloneDX SBOM (Go, Rust, npm, NuGet, Python, Maven), OSV vulnerabilities, Electron hardening, code-signing changes and an APPROVE/REVIEW/REJECT gate.",
+      "primary_language": "Python",
+      "languages": {
+        "Python": 212398
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "urban-change-detection-captioning",
+      "url": "https://github.com/Sushant-Nemade/urban-change-detection-captioning",
+      "description": null,
+      "primary_language": "Python",
+      "languages": {
+        "Python": 176947,
+        "Shell": 845
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "browser",
+      "url": "https://github.com/Sushant-Nemade/browser",
+      "description": "Realm Stitchers - Cross-Reality Multiplayer Combat (Three.js + WebRTC + Spring Boot)",
+      "primary_language": "HTML",
+      "languages": {
+        "HTML": 248695,
+        "Java": 37383,
+        "PowerShell": 3475,
+        "Dockerfile": 1937,
+        "Batchfile": 1558,
+        "Shell": 709
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "neurodrive",
+      "url": "https://github.com/Sushant-Nemade/neurodrive",
+      "description": "Browser game where a population of neural networks evolves driving policies live via a genetic algorithm \u2014 hand-written NN, ray-cast sensors, GA, zero ML frameworks. TypeScript + React + Canvas. Playable demo + autopilot mode.",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 59385,
+        "CSS": 1140,
+        "HTML": 848,
+        "JavaScript": 251
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "ai-werewolf-arena",
+      "url": "https://github.com/Sushant-Nemade/ai-werewolf-arena",
+      "description": "Multi-agent LLM social-deduction arena: autonomous Werewolf agents with episodic RAG memory, fail-closed guardrails, decision tracing, and an ELO evaluation harness. FastAPI + React, runs offline with Ollama or a deterministic mock.",
+      "primary_language": "Python",
+      "languages": {
+        "Python": 79584,
+        "TypeScript": 16966,
+        "CSS": 7686,
+        "Dockerfile": 916,
+        "Makefile": 552,
+        "HTML": 480
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "money-dashboard",
+      "url": "https://github.com/Sushant-Nemade/money-dashboard",
+      "description": "Revenue dashboard for brand deals, product sales, and client work",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 10053,
+        "JavaScript": 1347
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "comment-idea-generator",
+      "url": "https://github.com/Sushant-Nemade/comment-idea-generator",
+      "description": "Interactive comment analysis and content planning demo",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 3227,
+        "JavaScript": 2013
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "ai-receptionist",
+      "url": "https://github.com/Sushant-Nemade/ai-receptionist",
+      "description": "Twilio and Supabase receptionist prototype with live webhook routes and demo UI",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 8586,
+        "JavaScript": 1396
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "whatsapp-assistant",
+      "url": "https://github.com/Sushant-Nemade/whatsapp-assistant",
+      "description": "WhatsApp webhook assistant with order lookup and demo UI",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 5209,
+        "HTML": 1709,
+        "Dockerfile": 220
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "voice-note-idea-catcher",
+      "url": "https://github.com/Sushant-Nemade/voice-note-idea-catcher",
+      "description": "Voice note capture and AI idea structuring prototype",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 6958,
+        "JavaScript": 766
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "ai-chief-of-staff",
+      "url": "https://github.com/Sushant-Nemade/ai-chief-of-staff",
+      "description": "Daily Gmail and Calendar brief prototype with sample dashboard",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 6397,
+        "JavaScript": 956
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "ai-trip-planner",
+      "url": "https://github.com/Sushant-Nemade/ai-trip-planner",
+      "description": "Interactive itinerary builder and travel reference demo",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 3420,
+        "JavaScript": 1325
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "link-in-bio",
+      "url": "https://github.com/Sushant-Nemade/link-in-bio",
+      "description": "Custom link page with local editor and click analytics demo",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 4063,
+        "JavaScript": 800
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "creator-collab-matchmaker",
+      "url": "https://github.com/Sushant-Nemade/creator-collab-matchmaker",
+      "description": "Creator matching demo based on niche, goals, and audience scale",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 3000,
+        "JavaScript": 1273
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "public-ship-log",
+      "url": "https://github.com/Sushant-Nemade/public-ship-log",
+      "description": "Build-in-public timeline and streak tracking demo",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 3055,
+        "JavaScript": 1044
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "subscription-auditor",
+      "url": "https://github.com/Sushant-Nemade/subscription-auditor",
+      "description": "Privacy-first local subscription analysis for CSV and PDF statements",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 5955,
+        "JavaScript": 3600
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "security-checker",
+      "url": "https://github.com/Sushant-Nemade/security-checker",
+      "description": "Local secret scanner CLI and browser UI with SARIF output",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 5921,
+        "HTML": 2642
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "applied-ai-systems-portfolio",
+      "url": "https://github.com/Sushant-Nemade/applied-ai-systems-portfolio",
+      "description": "Eight self-hosted AI/ML projects: document QA, sentiment, news, PR review, research, voice, RAG evaluation, and guardrails.",
+      "primary_language": "Python",
+      "languages": {
+        "Python": 58861,
+        "HTML": 12673,
+        "Dockerfile": 557
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "forgeai-production-engine",
+      "url": "https://github.com/Sushant-Nemade/forgeai-production-engine",
+      "description": "ForgeAI: Autonomous Vibe-to-Production Micro-SaaS Engine \u2014 async multi-agent code factory with FastAPI, PostgreSQL, security QA, observability, and CI/CD.",
+      "primary_language": "Python",
+      "languages": {
+        "Python": 18996,
+        "Dockerfile": 450,
+        "Mako": 297
       },
       "stars": 0,
       "forks": 0,
@@ -30,6 +375,17 @@
     }
   ],
   "language_bytes": {
-    "Python": 100632
+    "Python": 990120,
+    "HTML": 370768,
+    "TypeScript": 204198,
+    "CSS": 66393,
+    "JavaScript": 51764,
+    "Java": 37383,
+    "Dockerfile": 5197,
+    "PowerShell": 3475,
+    "Batchfile": 1558,
+    "Shell": 1554,
+    "Makefile": 552,
+    "Mako": 297
   }
 }
