@@ -81,12 +81,14 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 | Market Insight | [Open demo](https://sushant-ai-demos.pages.dev/MarketInsight/) | Fictional financial research |
 | TravelBrain | [Open demo](https://sushant-ai-demos.pages.dev/TravelBrain/) | Browser planner; illustrative budgets |
 | Airbnb Price Workbench | [Open model](https://sushant-nemade.github.io/airbnb-price-workbench/) | Actual browser ONNX inference; NYC2019 benchmark |
+| Enterprise Hybrid RAG Workbench | [Open workbench](https://sushant-nemade.github.io/enterprise-hybrid-rag-workbench/) | 4-mode hybrid retrieval, RBAC & NLI faithfulness benchmark |
 | Doclify | [Download CLI](https://github.com/Sushant-Nemade/Doclify/releases/tag/v0.3.0-reference) | Installable tool, not a hosted upload service |
 
 ### Production-oriented AI engineering
 
 - [Applied AI Systems Portfolio](https://github.com/Sushant-Nemade/applied-ai-systems-portfolio) - self-hosted AI services with retrieval, evaluation, guardrails and local inference.
 - [ForgeAI Production Engine](https://github.com/Sushant-Nemade/forgeai-production-engine) - typed multi-agent orchestration with fail-closed QA, persistence and observability.
+- [Enterprise Hybrid RAG Workbench](https://github.com/Sushant-Nemade/enterprise-hybrid-rag-workbench) - 4-mode hybrid retrieval (SQLite FTS5 BM25, 384-d ONNX embeddings, Reciprocal Rank Fusion k=60 and Cross-Encoder reranking), pre-retrieval RBAC, freshness gating, passage-level NLI claim verification and SHA-256 digest-bound HITL review across 50 benchmark cases (top-5 retrieval coverage 1.0000 vs 0.6471 lexical-only, MRR@10 0.9853, NDCG@10 0.9891, passage claim support 0.9868 and 0.0000 RBAC leakage); local CPU ONNX execution verified, external cloud LLM connectors unconfigured.
 
 ### Interactive AI, computer vision and learning systems
 
