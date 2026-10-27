@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "username": "Sushant-Nemade",
-  "retrieved_at": "2026-10-26T10:09:33+00:00",
+  "retrieved_at": "2026-10-27T09:49:55+00:00",
   "source": "https://api.github.com/users/Sushant-Nemade/repos",
   "repositories": [
     {
@@ -23,8 +23,22 @@
       "description": null,
       "primary_language": "HTML",
       "languages": {
-        "HTML": 70108,
+        "HTML": 72128,
         "CSS": 1594
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "enterprise-hybrid-rag-workbench",
+      "url": "https://github.com/Sushant-Nemade/enterprise-hybrid-rag-workbench",
+      "description": "Evidence-led Python/FastAPI reference architecture for Hybrid RAG (SQLite FTS5 BM25 + 384-d Dense Vectors + RRF k=60 + Cross-Encoder Reranking), Pre-Retrieval RBAC & Freshness Governance, NLI Claim Verification, and Digest-Bound HITL",
+      "primary_language": "Python",
+      "languages": {
+        "Python": 205152,
+        "HTML": 29867,
+        "Dockerfile": 585
       },
       "stars": 0,
       "forks": 0,
@@ -203,13 +217,26 @@
       "archived": false
     },
     {
-      "name": "ai-receptionist",
-      "url": "https://github.com/Sushant-Nemade/ai-receptionist",
-      "description": "Twilio and Supabase receptionist prototype with live webhook routes and demo UI",
+      "name": "ai-chief-of-staff",
+      "url": "https://github.com/Sushant-Nemade/ai-chief-of-staff",
+      "description": "Daily Gmail and Calendar brief prototype with sample dashboard",
       "primary_language": "TypeScript",
       "languages": {
-        "TypeScript": 8586,
-        "JavaScript": 1396
+        "TypeScript": 6397,
+        "JavaScript": 956
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "voice-note-idea-catcher",
+      "url": "https://github.com/Sushant-Nemade/voice-note-idea-catcher",
+      "description": "Voice note capture and AI idea structuring prototype",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 6958,
+        "JavaScript": 766
       },
       "stars": 0,
       "forks": 0,
@@ -230,26 +257,13 @@
       "archived": false
     },
     {
-      "name": "voice-note-idea-catcher",
-      "url": "https://github.com/Sushant-Nemade/voice-note-idea-catcher",
-      "description": "Voice note capture and AI idea structuring prototype",
+      "name": "ai-receptionist",
+      "url": "https://github.com/Sushant-Nemade/ai-receptionist",
+      "description": "Twilio and Supabase receptionist prototype with live webhook routes and demo UI",
       "primary_language": "TypeScript",
       "languages": {
-        "TypeScript": 6958,
-        "JavaScript": 766
-      },
-      "stars": 0,
-      "forks": 0,
-      "archived": false
-    },
-    {
-      "name": "ai-chief-of-staff",
-      "url": "https://github.com/Sushant-Nemade/ai-chief-of-staff",
-      "description": "Daily Gmail and Calendar brief prototype with sample dashboard",
-      "primary_language": "TypeScript",
-      "languages": {
-        "TypeScript": 6397,
-        "JavaScript": 956
+        "TypeScript": 8586,
+        "JavaScript": 1396
       },
       "stars": 0,
       "forks": 0,
@@ -269,13 +283,13 @@
       "archived": false
     },
     {
-      "name": "link-in-bio",
-      "url": "https://github.com/Sushant-Nemade/link-in-bio",
-      "description": "Custom link page with local editor and click analytics demo",
+      "name": "public-ship-log",
+      "url": "https://github.com/Sushant-Nemade/public-ship-log",
+      "description": "Build-in-public timeline and streak tracking demo",
       "primary_language": "TypeScript",
       "languages": {
-        "TypeScript": 4063,
-        "JavaScript": 800
+        "TypeScript": 3055,
+        "JavaScript": 1044
       },
       "stars": 0,
       "forks": 0,
@@ -295,26 +309,13 @@
       "archived": false
     },
     {
-      "name": "public-ship-log",
-      "url": "https://github.com/Sushant-Nemade/public-ship-log",
-      "description": "Build-in-public timeline and streak tracking demo",
+      "name": "link-in-bio",
+      "url": "https://github.com/Sushant-Nemade/link-in-bio",
+      "description": "Custom link page with local editor and click analytics demo",
       "primary_language": "TypeScript",
       "languages": {
-        "TypeScript": 3055,
-        "JavaScript": 1044
-      },
-      "stars": 0,
-      "forks": 0,
-      "archived": false
-    },
-    {
-      "name": "subscription-auditor",
-      "url": "https://github.com/Sushant-Nemade/subscription-auditor",
-      "description": "Privacy-first local subscription analysis for CSV and PDF statements",
-      "primary_language": "TypeScript",
-      "languages": {
-        "TypeScript": 5955,
-        "JavaScript": 3600
+        "TypeScript": 4063,
+        "JavaScript": 800
       },
       "stars": 0,
       "forks": 0,
@@ -328,6 +329,19 @@
       "languages": {
         "TypeScript": 5921,
         "HTML": 2642
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "subscription-auditor",
+      "url": "https://github.com/Sushant-Nemade/subscription-auditor",
+      "description": "Privacy-first local subscription analysis for CSV and PDF statements",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 5955,
+        "JavaScript": 3600
       },
       "stars": 0,
       "forks": 0,
@@ -375,13 +389,13 @@
     }
   ],
   "language_bytes": {
-    "Python": 990120,
-    "HTML": 370768,
+    "Python": 1195272,
+    "HTML": 402655,
     "TypeScript": 204198,
     "CSS": 66393,
     "JavaScript": 51764,
     "Java": 37383,
-    "Dockerfile": 5197,
+    "Dockerfile": 5782,
     "PowerShell": 3475,
     "Batchfile": 1558,
     "Shell": 1554,
