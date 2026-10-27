@@ -82,6 +82,7 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 | TravelBrain | [Open demo](https://sushant-ai-demos.pages.dev/TravelBrain/) | Browser planner; illustrative budgets |
 | Airbnb Price Workbench | [Open model](https://sushant-nemade.github.io/airbnb-price-workbench/) | Actual browser ONNX inference; NYC2019 benchmark |
 | Enterprise Hybrid RAG Workbench | [Open workbench](https://sushant-nemade.github.io/enterprise-hybrid-rag-workbench/) | 4-mode hybrid retrieval, RBAC & NLI faithfulness benchmark |
+| Enterprise Hybrid Data Copilot | [Open console](https://sushant-nemade.github.io/enterprise-hybrid-data-copilot/) | SQL + RAG router, freshness gate & numerical verifier |
 | Doclify | [Download CLI](https://github.com/Sushant-Nemade/Doclify/releases/tag/v0.3.0-reference) | Installable tool, not a hosted upload service |
 
 ### Production-oriented AI engineering
@@ -89,6 +90,7 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 - [Applied AI Systems Portfolio](https://github.com/Sushant-Nemade/applied-ai-systems-portfolio) - self-hosted AI services with retrieval, evaluation, guardrails and local inference.
 - [ForgeAI Production Engine](https://github.com/Sushant-Nemade/forgeai-production-engine) - typed multi-agent orchestration with fail-closed QA, persistence and observability.
 - [Enterprise Hybrid RAG Workbench](https://github.com/Sushant-Nemade/enterprise-hybrid-rag-workbench) - 4-mode hybrid retrieval (SQLite FTS5 BM25, 384-d ONNX embeddings, Reciprocal Rank Fusion k=60 and Cross-Encoder reranking), pre-retrieval RBAC, freshness gating, passage-level NLI claim verification and SHA-256 digest-bound HITL review across 50 benchmark cases (top-5 retrieval coverage 1.0000 vs 0.6471 lexical-only, MRR@10 0.9853, NDCG@10 0.9891, passage claim support 0.9868 and 0.0000 RBAC leakage); local CPU ONNX execution verified, external cloud LLM connectors unconfigured.
+- [Enterprise Hybrid Data Copilot](https://github.com/Sushant-Nemade/enterprise-hybrid-data-copilot) - decision-support copilot bridging 4 relational SQLite KPI tables and 16 operational SOP passages with pre-query data-freshness and null-ratio gates, AST-validated read-only parameterized SQL, deterministic numerical grounding verification and a SHA-256 digest-bound HITL approval state machine (`DRAFT -> PENDING_APPROVAL -> APPROVED / REJECTED`) across a 40-query Build-vs-Adopt benchmark (1.0000 SQL execution rate, 1.0000 numerical parity vs 0.5100 ungoverned Prompt-to-SQL, 1.0000 stale-partition gate selectivity and 83.24% token reduction); local SQLite/FastAPI execution verified, external cloud warehouses unconfigured.
 
 ### Interactive AI, computer vision and learning systems
 
