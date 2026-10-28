@@ -72,14 +72,14 @@ The portfolio is grouped by engineering signal rather than chronology. Public pr
 
 ### Public demos
 
-[Cloudflare reference collection](https://sushant-ai-demos.pages.dev/) and the individual GitHub Pages models below are publicly hosted and do not require my local computer to be running. Private APIs and AI credentials are not exposed.
+The current references below are publicly hosted on GitHub Pages and do not require my local computer to be running. Private APIs and AI credentials are not exposed. Older Cloudflare mirrors are historical snapshots, not the current security-patched builds.
 
 | Project | Public access | Reference scope |
 | --- | --- | --- |
-| AI Blog Publisher | [Open demo](https://sushant-ai-demos.pages.dev/ai-blog-publisher/) | Synthetic article reader |
-| GitPulse | [Open demo](https://sushant-ai-demos.pages.dev/gitpulse/) | Fictional audience dashboard |
-| Market Insight | [Open demo](https://sushant-ai-demos.pages.dev/MarketInsight/) | Fictional financial research |
-| TravelBrain | [Open demo](https://sushant-ai-demos.pages.dev/TravelBrain/) | Browser planner; illustrative budgets |
+| AI Blog Publisher | [Open demo](https://sushant-nemade.github.io/ai-blog-publisher/) | Synthetic article reader |
+| GitPulse | [Open demo](https://sushant-nemade.github.io/gitpulse/) | Fictional audience dashboard |
+| Market Insight | [Open demo](https://sushant-nemade.github.io/MarketInsight/) | Fictional financial research |
+| TravelBrain | [Open demo](https://sushant-nemade.github.io/TravelBrain/) | Browser planner; illustrative budgets |
 | Airbnb Price Workbench | [Open model](https://sushant-nemade.github.io/airbnb-price-workbench/) | Actual browser ONNX inference; NYC2019 benchmark |
 | Boston Housing Research Workbench | [Open model](https://sushant-nemade.github.io/boston-housing-workbench/) | Actual ONNX inference; historical tract medians, not current valuations |
 | Enterprise Hybrid RAG Workbench | [Open workbench](https://sushant-nemade.github.io/enterprise-hybrid-rag-workbench/) | 4-mode hybrid retrieval, RBAC & NLI faithfulness benchmark |
