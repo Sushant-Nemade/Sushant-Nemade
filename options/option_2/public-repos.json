@@ -1,73 +1,31 @@
 {
   "schema_version": 1,
   "username": "Sushant-Nemade",
-  "retrieved_at": "2026-10-27T09:49:55+00:00",
+  "retrieved_at": "2026-10-28T10:36:18+00:00",
   "source": "https://api.github.com/users/Sushant-Nemade/repos",
   "repositories": [
-    {
-      "name": "Sushant-Nemade",
-      "url": "https://github.com/Sushant-Nemade/Sushant-Nemade",
-      "description": null,
-      "primary_language": "Python",
-      "languages": {
-        "Python": 165577,
-        "HTML": 5340
-      },
-      "stars": 0,
-      "forks": 0,
-      "archived": false
-    },
-    {
-      "name": "sushant-nemade.github.io",
-      "url": "https://github.com/Sushant-Nemade/sushant-nemade.github.io",
-      "description": null,
-      "primary_language": "HTML",
-      "languages": {
-        "HTML": 72128,
-        "CSS": 1594
-      },
-      "stars": 0,
-      "forks": 0,
-      "archived": false
-    },
-    {
-      "name": "enterprise-hybrid-rag-workbench",
-      "url": "https://github.com/Sushant-Nemade/enterprise-hybrid-rag-workbench",
-      "description": "Evidence-led Python/FastAPI reference architecture for Hybrid RAG (SQLite FTS5 BM25 + 384-d Dense Vectors + RRF k=60 + Cross-Encoder Reranking), Pre-Retrieval RBAC & Freshness Governance, NLI Claim Verification, and Digest-Bound HITL",
-      "primary_language": "Python",
-      "languages": {
-        "Python": 205152,
-        "HTML": 29867,
-        "Dockerfile": 585
-      },
-      "stars": 0,
-      "forks": 0,
-      "archived": false
-    },
     {
       "name": "ai-project-gallery",
       "url": "https://github.com/Sushant-Nemade/ai-project-gallery",
       "description": "Categorized AI project portfolio: attributed upstream sources, one-project-at-a-time delivery, and evidence-based release status.",
       "primary_language": "Python",
       "languages": {
-        "Python": 25442
+        "Python": 25920
       },
       "stars": 0,
       "forks": 0,
       "archived": false
     },
     {
-      "name": "airbnb-price-workbench",
-      "url": "https://github.com/Sushant-Nemade/airbnb-price-workbench",
-      "description": "Original MIT NYC2019 price benchmark: host-disjoint training/evaluation, calibrated uncertainty, real browser ONNX inference and bounded API.",
-      "primary_language": "TypeScript",
+      "name": "autonomous-quality-redteam-harness",
+      "url": "https://github.com/Sushant-Nemade/autonomous-quality-redteam-harness",
+      "description": "Guarded automatic daily maintenance: isolated AI, real red-green tests, protected exact-SHA merges, independent CI and verified main deployments; no routine manual approval.",
+      "primary_language": "Python",
       "languages": {
-        "TypeScript": 41196,
-        "Python": 33314,
-        "CSS": 10894,
-        "JavaScript": 3233,
-        "Dockerfile": 1117,
-        "HTML": 323
+        "Python": 193183,
+        "HTML": 25876,
+        "Dockerfile": 2419,
+        "PowerShell": 1250
       },
       "stars": 0,
       "forks": 0,
@@ -105,6 +63,91 @@
       "archived": false
     },
     {
+      "name": "airbnb-price-workbench",
+      "url": "https://github.com/Sushant-Nemade/airbnb-price-workbench",
+      "description": "Original MIT NYC2019 price benchmark: host-disjoint training/evaluation, calibrated uncertainty, real browser ONNX inference and bounded API.",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 41196,
+        "Python": 33314,
+        "CSS": 10894,
+        "JavaScript": 3233,
+        "Dockerfile": 1117,
+        "HTML": 323
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "sushant-nemade.github.io",
+      "url": "https://github.com/Sushant-Nemade/sushant-nemade.github.io",
+      "description": null,
+      "primary_language": "HTML",
+      "languages": {
+        "HTML": 79302,
+        "CSS": 1594
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "Sushant-Nemade",
+      "url": "https://github.com/Sushant-Nemade/Sushant-Nemade",
+      "description": null,
+      "primary_language": "Python",
+      "languages": {
+        "Python": 165577,
+        "HTML": 5340
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "enterprise-hybrid-data-copilot",
+      "url": "https://github.com/Sushant-Nemade/enterprise-hybrid-data-copilot",
+      "description": "Principal-level Python/FastAPI and TypeScript reference bridging structured relational KPIs (SQLite) and unstructured operational SOPs with automated data-freshness gates, AST-validated read-only semantic SQL, numerical verification, and digest-bound HITL workflow approvals",
+      "primary_language": "Python",
+      "languages": {
+        "Python": 177835,
+        "HTML": 27899,
+        "TypeScript": 2027,
+        "Dockerfile": 553
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "enterprise-hybrid-rag-workbench",
+      "url": "https://github.com/Sushant-Nemade/enterprise-hybrid-rag-workbench",
+      "description": "Evidence-led Python/FastAPI reference architecture for Hybrid RAG (SQLite FTS5 BM25 + 384-d Dense Vectors + RRF k=60 + Cross-Encoder Reranking), Pre-Retrieval RBAC & Freshness Governance, NLI Claim Verification, and Digest-Bound HITL",
+      "primary_language": "Python",
+      "languages": {
+        "Python": 211891,
+        "HTML": 29867,
+        "Dockerfile": 585
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "urban-change-detection-captioning",
+      "url": "https://github.com/Sushant-Nemade/urban-change-detection-captioning",
+      "description": null,
+      "primary_language": "Python",
+      "languages": {
+        "Python": 250243,
+        "Shell": 845
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
       "name": "privacy-flow-inspector",
       "url": "https://github.com/Sushant-Nemade/privacy-flow-inspector",
       "description": "Offline privacy gate for recorded web traffic: which personal data leaves the browser, to whom and how, incl. WebSocket and compressed payloads. Persona matching, checked detectors (IBAN, Steuer-ID, KVNR), GDPR data-flow map, SARIF, redacted HAR.",
@@ -123,19 +166,6 @@
       "primary_language": "Python",
       "languages": {
         "Python": 212398
-      },
-      "stars": 0,
-      "forks": 0,
-      "archived": false
-    },
-    {
-      "name": "urban-change-detection-captioning",
-      "url": "https://github.com/Sushant-Nemade/urban-change-detection-captioning",
-      "description": null,
-      "primary_language": "Python",
-      "languages": {
-        "Python": 176947,
-        "Shell": 845
       },
       "stars": 0,
       "forks": 0,
@@ -217,26 +247,13 @@
       "archived": false
     },
     {
-      "name": "ai-chief-of-staff",
-      "url": "https://github.com/Sushant-Nemade/ai-chief-of-staff",
-      "description": "Daily Gmail and Calendar brief prototype with sample dashboard",
+      "name": "ai-receptionist",
+      "url": "https://github.com/Sushant-Nemade/ai-receptionist",
+      "description": "Twilio and Supabase receptionist prototype with live webhook routes and demo UI",
       "primary_language": "TypeScript",
       "languages": {
-        "TypeScript": 6397,
-        "JavaScript": 956
-      },
-      "stars": 0,
-      "forks": 0,
-      "archived": false
-    },
-    {
-      "name": "voice-note-idea-catcher",
-      "url": "https://github.com/Sushant-Nemade/voice-note-idea-catcher",
-      "description": "Voice note capture and AI idea structuring prototype",
-      "primary_language": "TypeScript",
-      "languages": {
-        "TypeScript": 6958,
-        "JavaScript": 766
+        "TypeScript": 8586,
+        "JavaScript": 1396
       },
       "stars": 0,
       "forks": 0,
@@ -257,13 +274,26 @@
       "archived": false
     },
     {
-      "name": "ai-receptionist",
-      "url": "https://github.com/Sushant-Nemade/ai-receptionist",
-      "description": "Twilio and Supabase receptionist prototype with live webhook routes and demo UI",
+      "name": "voice-note-idea-catcher",
+      "url": "https://github.com/Sushant-Nemade/voice-note-idea-catcher",
+      "description": "Voice note capture and AI idea structuring prototype",
       "primary_language": "TypeScript",
       "languages": {
-        "TypeScript": 8586,
-        "JavaScript": 1396
+        "TypeScript": 6958,
+        "JavaScript": 766
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
+    {
+      "name": "ai-chief-of-staff",
+      "url": "https://github.com/Sushant-Nemade/ai-chief-of-staff",
+      "description": "Daily Gmail and Calendar brief prototype with sample dashboard",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 6397,
+        "JavaScript": 956
       },
       "stars": 0,
       "forks": 0,
@@ -283,13 +313,13 @@
       "archived": false
     },
     {
-      "name": "public-ship-log",
-      "url": "https://github.com/Sushant-Nemade/public-ship-log",
-      "description": "Build-in-public timeline and streak tracking demo",
+      "name": "link-in-bio",
+      "url": "https://github.com/Sushant-Nemade/link-in-bio",
+      "description": "Custom link page with local editor and click analytics demo",
       "primary_language": "TypeScript",
       "languages": {
-        "TypeScript": 3055,
-        "JavaScript": 1044
+        "TypeScript": 4063,
+        "JavaScript": 800
       },
       "stars": 0,
       "forks": 0,
@@ -309,13 +339,13 @@
       "archived": false
     },
     {
-      "name": "link-in-bio",
-      "url": "https://github.com/Sushant-Nemade/link-in-bio",
-      "description": "Custom link page with local editor and click analytics demo",
+      "name": "public-ship-log",
+      "url": "https://github.com/Sushant-Nemade/public-ship-log",
+      "description": "Build-in-public timeline and streak tracking demo",
       "primary_language": "TypeScript",
       "languages": {
-        "TypeScript": 4063,
-        "JavaScript": 800
+        "TypeScript": 3055,
+        "JavaScript": 1044
       },
       "stars": 0,
       "forks": 0,
@@ -389,14 +419,14 @@
     }
   ],
   "language_bytes": {
-    "Python": 1195272,
-    "HTML": 402655,
-    "TypeScript": 204198,
+    "Python": 1646803,
+    "HTML": 463604,
+    "TypeScript": 206225,
     "CSS": 66393,
     "JavaScript": 51764,
     "Java": 37383,
-    "Dockerfile": 5782,
-    "PowerShell": 3475,
+    "Dockerfile": 8754,
+    "PowerShell": 4725,
     "Batchfile": 1558,
     "Shell": 1554,
     "Makefile": 552,
