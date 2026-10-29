@@ -1,9 +1,22 @@
 {
   "schema_version": 1,
   "username": "Sushant-Nemade",
-  "retrieved_at": "2026-10-28T10:36:18+00:00",
+  "retrieved_at": "2026-10-29T10:54:27+00:00",
   "source": "https://api.github.com/users/Sushant-Nemade/repos",
   "repositories": [
+    {
+      "name": "Sushant-Nemade",
+      "url": "https://github.com/Sushant-Nemade/Sushant-Nemade",
+      "description": null,
+      "primary_language": "Python",
+      "languages": {
+        "Python": 165577,
+        "HTML": 5340
+      },
+      "stars": 0,
+      "forks": 0,
+      "archived": false
+    },
     {
       "name": "ai-project-gallery",
       "url": "https://github.com/Sushant-Nemade/ai-project-gallery",
@@ -87,19 +100,6 @@
       "languages": {
         "HTML": 79302,
         "CSS": 1594
-      },
-      "stars": 0,
-      "forks": 0,
-      "archived": false
-    },
-    {
-      "name": "Sushant-Nemade",
-      "url": "https://github.com/Sushant-Nemade/Sushant-Nemade",
-      "description": null,
-      "primary_language": "Python",
-      "languages": {
-        "Python": 165577,
-        "HTML": 5340
       },
       "stars": 0,
       "forks": 0,
