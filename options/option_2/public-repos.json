@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "username": "Sushant-Nemade",
-  "retrieved_at": "2026-11-11T11:53:47+00:00",
+  "retrieved_at": "2026-11-13T12:14:26+00:00",
   "source": "https://api.github.com/users/Sushant-Nemade/repos",
   "repositories": [
     {
@@ -23,7 +23,7 @@
       "description": "Categorized AI project portfolio: attributed upstream sources, one-project-at-a-time delivery, and evidence-based release status.",
       "primary_language": "Python",
       "languages": {
-        "Python": 25920
+        "Python": 26684
       },
       "stars": 0,
       "forks": 0,
@@ -419,7 +419,7 @@
     }
   ],
   "language_bytes": {
-    "Python": 1646803,
+    "Python": 1647567,
     "HTML": 463604,
     "TypeScript": 206225,
     "CSS": 66393,
